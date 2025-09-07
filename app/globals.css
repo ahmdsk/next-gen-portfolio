@@ -45,6 +45,8 @@
     oklch(0.6 0.118 184.704 / 0.1) 100%
   );
   --shadow-light: 0 4px 20px oklch(0.646 0.222 285.12 / 0.1);
+  --font-plus-jakarta: "Poppins", sans-serif;
+  --font-poppins: "Plus Jakarta Sans", sans-serif;
 }
 
 .dark {
@@ -91,7 +93,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-plus-jakarta);
+  --font-heading: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -189,5 +192,14 @@
 
   .dark .light-card-shadow {
     box-shadow: var(--shadow-dark);
+  }
+
+  /* Added font utility classes for headings and body text */
+  .font-heading {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-plus-jakarta), sans-serif;
   }
 }

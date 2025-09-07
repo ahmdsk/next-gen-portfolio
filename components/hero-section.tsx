@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { HeroBadge } from "@/components/hero/hero-badge"
-import { HeroTitle } from "@/components/hero/hero-title"
-import { HeroDescription } from "@/components/hero/hero-description"
-import { HeroButtons } from "@/components/hero/hero-buttons"
-import { HeroStats } from "@/components/hero/hero-stats"
-import { LottieAnimation } from "@/components/lottie-animation"
+import { motion } from "framer-motion";
+import { HeroBadge } from "@/components/hero/hero-badge";
+import { HeroTitle } from "@/components/hero/hero-title";
+import { HeroDescription } from "@/components/hero/hero-description";
+import { HeroButtons } from "@/components/hero/hero-buttons";
+import { HeroStats } from "@/components/hero/hero-stats";
+import { LottieAnimation } from "@/components/lottie-animation";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -67,12 +68,21 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-10 right-10 opacity-20 dark:opacity-30">
+      {/* Top Left */}
+      <div className="absolute top-25 md:top-35 -left-5 md:left-20 opacity-40 dark:opacity-30">
         <LottieAnimation
-          src="https://lottie.host/4f3c6b7e-8b2e-4c8a-9c4a-2d8f1e6b3a9c/9K8j2L4m3n.json"
+          src="/lotties/Rocket.json"
           className="w-32 h-32"
         />
       </div>
+
+      {/* Top Right */}
+      <div className="absolute top-90 md:top-80 -right-10 md:right-10 opacity-40 dark:opacity-30">
+        <LottieAnimation
+          src="/lotties/Astronout.json"
+          className="w-52 h-52"
+        />
+      </div>
     </section>
-  )
+  );
 }

@@ -190,21 +190,21 @@ export function ContactForm() {
                         <div className="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center">📧</div>
                         <div>
                           <p className="font-medium">Email</p>
-                          <p className="text-muted-foreground">hello@devstudio.com</p>
+                          <p className="text-muted-foreground">hello@nextgeninfinity.com</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center">📞</div>
                         <div>
                           <p className="font-medium">WhatsApp</p>
-                          <p className="text-muted-foreground">+62 812-3456-7890</p>
+                          <p className="text-muted-foreground">+62 838-9221-2992</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center">📍</div>
                         <div>
                           <p className="font-medium">Location</p>
-                          <p className="text-muted-foreground">Jakarta, Indonesia</p>
+                          <p className="text-muted-foreground">Bandar Lampung, Indonesia</p>
                         </div>
                       </div>
                     </div>

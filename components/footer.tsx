@@ -49,7 +49,7 @@ export function Footer() {
             }}
             className="space-y-4"
           >
-            <h3 className="text-2xl font-bold text-accent">DevStudio</h3>
+            <h3 className="text-2xl font-bold text-accent">NextGenInfinity</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Partner terpercaya buat bikin digital presence kamu makin kece! Kita pake teknologi terbaru dan tim yang
               passionate banget 🚀
@@ -140,9 +140,9 @@ export function Footer() {
             <h4 className="text-lg font-semibold text-secondary">Hit Us Up! 📱</h4>
             <div className="space-y-3">
               {[
-                { icon: Mail, text: "hello@devstudio.com" },
-                { icon: Phone, text: "+62 812-3456-7890" },
-                { icon: MapPin, text: "Jakarta, Indonesia" },
+                { icon: Mail, text: "hello@nextgeninfinity.com" },
+                { icon: Phone, text: "+62 838-9221-2992" },
+                { icon: MapPin, text: "Bandar Lampung, Indonesia" },
               ].map((contact, index) => (
                 <motion.div
                   key={contact.text}
@@ -183,8 +183,8 @@ export function Footer() {
         <FadeIn delay={1.0}>
           <div className="border-t border-border/50 mt-12 pt-8 text-center">
             <p className="text-muted-foreground text-sm">
-              © 2024 DevStudio. All rights reserved. Dibuat dengan <span className="text-red-500 animate-pulse">❤️</span>{" "}
-              dan banyak kopi ☕ di Indonesia
+              © 2024 NextGenInfinity. All rights reserved.<br />Dibuat dengan <span className="text-red-500 animate-pulse">❤️</span>{" "}
+              dan banyak kopi ☕ di Bandar Lampung, Indonesia
             </p>
           </div>
         </FadeIn>

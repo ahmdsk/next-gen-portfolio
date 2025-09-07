@@ -18,7 +18,7 @@ export function FloatingActionButton() {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:hello@devstudio.com",
+      href: "mailto:hello@nextgeninfinity.com",
       color: "from-blue-500 to-blue-600",
     },
     {

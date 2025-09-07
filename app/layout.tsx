@@ -21,7 +21,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "DevStudio - Wujudkan Aplikasi Impian Anda",
+  title: "NextGenInfinity - Wujudkan Aplikasi Impian Anda",
   description: "Solusi pengembangan aplikasi web dan mobile yang inovatif dengan teknologi terdepan",
   generator: "v0.app",
 }

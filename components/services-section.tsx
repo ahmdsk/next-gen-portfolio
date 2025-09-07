@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { FadeIn } from "@/components/react-bits/fade-in"
-import { StaggerContainer } from "@/components/react-bits/stagger-container"
-import { ScaleIn } from "@/components/react-bits/scale-in"
-import { Monitor, Smartphone, Palette, Zap } from "lucide-react"
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/react-bits/fade-in";
+import { StaggerContainer } from "@/components/react-bits/stagger-container";
+import { ScaleIn } from "@/components/react-bits/scale-in";
+import { Monitor, Smartphone, Palette, Zap } from "lucide-react";
 
 const services = [
   {
@@ -14,51 +14,78 @@ const services = [
     title: "Bikin Website Kece",
     description:
       "Website yang responsive dan kekinian pake teknologi terbaru kayak React, Next.js. Dijamin fast loading dan bikin pengunjung betah!",
-    features: ["Design Responsive", "SEO Friendly", "Loading Cepet", "UI/UX Modern"],
-    gradient: "from-blue-500/5 to-cyan-500/5 dark:from-blue-500/10 dark:to-cyan-500/10",
+    features: [
+      "Design Responsive",
+      "SEO Friendly",
+      "Loading Cepet",
+      "UI/UX Modern",
+    ],
+    gradient:
+      "from-blue-500/5 to-cyan-500/5 dark:from-blue-500/10 dark:to-cyan-500/10",
   },
   {
     icon: Smartphone,
     title: "App Mobile Mantap",
     description:
       "Bikin app mobile yang smooth banget buat iOS dan Android. User-friendly dan performanya juara, dijamin nagih dipake terus!",
-    features: ["Cross Platform", "Performa Native", "Push Notif", "Bisa Offline"],
-    gradient: "from-green-500/5 to-emerald-500/5 dark:from-green-500/10 dark:to-emerald-500/10",
+    features: [
+      "Cross Platform",
+      "Performa Native",
+      "Push Notif",
+      "Bisa Offline",
+    ],
+    gradient:
+      "from-green-500/5 to-emerald-500/5 dark:from-green-500/10 dark:to-emerald-500/10",
   },
   {
     icon: Palette,
     title: "Design UI/UX Aesthetic",
-    description: "Design yang eye-catching dan user experience yang intuitif. Bikin user jatuh cinta sama produk kamu!",
+    description:
+      "Design yang eye-catching dan user experience yang intuitif. Bikin user jatuh cinta sama produk kamu!",
     features: ["User Research", "Wireframing", "Prototyping", "Design System"],
-    gradient: "from-purple-500/5 to-pink-500/5 dark:from-purple-500/10 dark:to-pink-500/10",
+    gradient:
+      "from-purple-500/5 to-pink-500/5 dark:from-purple-500/10 dark:to-pink-500/10",
   },
   {
     icon: Zap,
     title: "Optimasi Super Cepat",
     description:
       "Bikin app kamu jadi lightning fast! Optimasi performa yang bikin user experience makin smooth dan enjoyable.",
-    features: ["Speed Boost", "Database Tuning", "Caching Strategy", "Real-time Monitor"],
-    gradient: "from-orange-500/5 to-red-500/5 dark:from-orange-500/10 dark:to-red-500/10",
+    features: [
+      "Speed Boost",
+      "Database Tuning",
+      "Caching Strategy",
+      "Real-time Monitor",
+    ],
+    gradient:
+      "from-orange-500/5 to-red-500/5 dark:from-orange-500/10 dark:to-red-500/10",
   },
-]
+];
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-background via-card/20 to-background">
+    <section
+      id="services"
+      className="py-20 bg-gradient-to-b from-background via-card/20 to-background"
+    >
       <div className="container mx-auto px-4">
         <FadeIn delay={0.2}>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-foreground">
-              Service Kita Yang <span className="text-accent">Paling Hits!</span> 🔥
+              Service Kita Yang{" "}
+              <span className="text-accent">Paling Hits!</span> 🔥
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Semua yang kamu butuhin buat bikin digital presence yang kece, dari website sampai app mobile. Tim kita
-              siap bantuin! ✨
+              Semua yang kamu butuhin buat bikin digital presence yang kece,
+              dari website sampai app mobile. Tim kita siap bantuin! ✨
             </p>
           </div>
         </FadeIn>
 
-        <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer
+          staggerDelay={0.15}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -82,7 +109,9 @@ export function ServicesSection() {
                     <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors text-foreground">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{service.description}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                      {service.description}
+                    </p>
                   </div>
 
                   <div className="space-y-2 mb-6">
@@ -92,7 +121,9 @@ export function ServicesSection() {
                         className="flex items-center text-sm"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 + featureIndex * 0.05 + 0.5 }}
+                        transition={{
+                          delay: index * 0.1 + featureIndex * 0.05 + 0.5,
+                        }}
                         viewport={{ once: true }}
                       >
                         <div className="w-1.5 h-1.5 bg-gradient-to-r from-accent to-primary rounded-full mr-2" />
@@ -104,9 +135,9 @@ export function ServicesSection() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full group-hover:border-accent group-hover:text-accent bg-transparent hover:bg-accent/5 dark:hover:bg-accent/10 transition-all duration-300 border-border/50"
+                    className="w-full group-hover:border-accent group-hover:text-accent bg-transparent hover:bg-accent/5 dark:hover:bg-accent/10 transition-all duration-300 border-border/50 hover:text-accent dark:hover:text-accent-foreground"
                   >
-                    Cek Lebih Detail
+                    Pesen Sekarang!
                   </Button>
                 </CardContent>
               </Card>
@@ -115,5 +146,5 @@ export function ServicesSection() {
         </StaggerContainer>
       </div>
     </section>
-  )
+  );
 }

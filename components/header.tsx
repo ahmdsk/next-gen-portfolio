@@ -22,7 +22,7 @@ export function Header() {
     { name: "Service", href: "#services" },
     { name: "Tech Stack", href: "#tech" },
     { name: "Konsultasi", href: "#consultation" },
-    { name: "Contact", href: "#contact" },
+    { name: "Hubungi Kami", href: "#contact" },
   ]
 
   return (
@@ -40,7 +40,7 @@ export function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
           >
-            DevStudio
+            NextGenInfinity
           </motion.div>
 
           {/* Desktop Navigation */}

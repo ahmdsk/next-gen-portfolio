@@ -38,7 +38,7 @@ export function ContactEmailTemplate({ name, email, subject, message }: ContactE
 
             <Hr style={hr} />
 
-            <Text style={footer}>This email was sent from the DevStudio contact form.</Text>
+            <Text style={footer}>This email was sent from the NextGenInfinity contact form.</Text>
           </Section>
         </Container>
       </Body>

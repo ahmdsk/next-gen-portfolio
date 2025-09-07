@@ -1,30 +1,101 @@
-# Landing page design
+# NextGen Portfolio
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A modern, responsive, and customizable portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. Showcase your projects, skills, and experiences with a sleek UI and smooth animations.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ahmdsks-projects/v0-landing-page-design)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/oqM90DRzaZ0)
+## Features
 
-## Overview
+- ⚡️ **Next.js 14**: Fast, SEO-friendly, and server-side rendered.
+- 🎨 **Tailwind CSS**: Utility-first CSS for rapid UI development.
+- 🛠 **TypeScript**: Type-safe codebase for reliability.
+- 🎬 **Framer Motion**: Smooth page and component animations.
+- 🌙 **Dark/Light Mode**: Toggle between themes.
+- 📱 **Responsive Design**: Looks great on all devices.
+- 🔒 **Environment Variables**: Secure API keys and configs.
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Demo
+
+[Live Demo](https://your-portfolio-demo-link.com)
+
+## Screenshots
+
+![Home Page](./public/screenshots/home.png)
+![Consultation](./public/screenshots/konsultasi.png)
+![Service](./public/screenshots/service.png)
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/ahmdsk/next-gen-portfolio.git
+cd next-gen-portfolio-v2
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+RESEND_API_KEY="your_resend_api_key"
+```
+
+> **Note:**  
+> - This API key is used for sending emails via Resend.
+> - Replace `"your_resend_api_key"` with your actual Resend API key. You can obtain it by signing up at [Resend](https://resend.com).
+
+### 4. Run the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## Project Structure
+
+```
+.
+├── components/      # Reusable UI components
+├── app/           # Next.js pages (routes)
+├── public/          # Static assets (images, icons)
+├── styles/          # Global styles
+├── utils/           # Utility functions
+├── data/            # Portfolio data (projects, skills, etc.)
+├── .env.local       # Environment variables
+└── README.md
+```
+
+## Customization
+
+- **Edit `data/` files** to update your projects, skills, and personal info.
+- **Update theme** in `tailwind.config.js`.
 
 ## Deployment
 
-Your project is live at:
+Deploy easily to [Vercel](https://vercel.com/) (recommended):
 
-**[https://vercel.com/ahmdsks-projects/v0-landing-page-design](https://vercel.com/ahmdsks-projects/v0-landing-page-design)**
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/ahmdsk/next-gen-portfolio)
 
-## Build your app
+Or use your preferred hosting provider.
 
-Continue building your app on:
+## Contributing
 
-**[https://v0.app/chat/projects/oqM90DRzaZ0](https://v0.app/chat/projects/oqM90DRzaZ0)**
+Pull requests are welcome! For major changes, please open an issue first.
 
-## How It Works
+## License
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+[MIT](./LICENSE)
+
+---
+
+> Inspired by the best modern portfolios and open-source projects.

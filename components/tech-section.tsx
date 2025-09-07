@@ -6,23 +6,71 @@ import { FadeIn } from "@/components/react-bits/fade-in"
 import { StaggerContainer } from "@/components/react-bits/stagger-container"
 
 const technologies = [
-  { name: "React", logo: "/react-logo.png", color: "from-blue-400 to-blue-600" },
-  { name: "Next.js", logo: "/nextjs-logo.png", color: "from-gray-700 to-black" },
-  { name: "TypeScript", logo: "/typescript-logo.png", color: "from-blue-500 to-blue-700" },
-  { name: "Node.js", logo: "/nodejs-logo.png", color: "from-green-500 to-green-700" },
-  { name: "React Native", logo: "/react-native-logo.png", color: "from-cyan-400 to-cyan-600" },
-  { name: "Flutter", logo: "/flutter-logo.png", color: "from-blue-400 to-sky-500" },
-  { name: "PostgreSQL", logo: "/postgresql-logo.png", color: "from-blue-600 to-indigo-600" },
-  { name: "MongoDB", logo: "/mongodb-logo.png", color: "from-green-600 to-green-800" },
-  { name: "AWS", logo: "/aws-logo.png", color: "from-orange-400 to-orange-600" },
-  { name: "Docker", logo: "/docker-logo.png", color: "from-blue-500 to-blue-700" },
-  { name: "Figma", logo: "/figma-logo.png", color: "from-purple-500 to-pink-500" },
-  { name: "Git", logo: "/git-logo.jpg", color: "from-red-500 to-red-700" },
+  {
+    name: "React",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    color: "from-blue-400 to-blue-600",
+  },
+  {
+    name: "Next.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    color: "from-gray-700 to-black",
+  },
+  {
+    name: "TypeScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    color: "from-blue-500 to-blue-700",
+  },
+  {
+    name: "Node.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    color: "from-green-500 to-green-700",
+  },
+  {
+    name: "React Native",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    color: "from-cyan-400 to-cyan-600",
+  },
+  {
+    name: "Flutter",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
+    color: "from-blue-400 to-sky-500",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    color: "from-blue-600 to-indigo-600",
+  },
+  {
+    name: "MongoDB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    color: "from-green-600 to-green-800",
+  },
+  {
+    name: "AWS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+    color: "from-orange-400 to-orange-600",
+  },
+  {
+    name: "Docker",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    color: "from-blue-500 to-blue-700",
+  },
+  {
+    name: "Figma",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    name: "Git",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    color: "from-red-500 to-red-700",
+  },
 ]
 
 export function TechSection() {
   return (
-    <section id="tech" className="py-20 bg-gradient-to-b from-card/30 to-background">
+    <section id="tech" className="py-20 bg-gradient-to-b from-background via-card/20 to-background">
       <div className="container mx-auto px-4">
         <FadeIn delay={0.2}>
           <div className="text-center mb-16">
@@ -51,18 +99,14 @@ export function TechSection() {
               }}
               className="group"
             >
-              <Card className="hover:shadow-lg transition-all duration-300 hover:border-accent/50 bg-gradient-to-br from-background/50 to-card/50 backdrop-blur-sm border-accent/10">
+              <Card className="hover:shadow-xl transition-all duration-300 hover:border-accent/50 bg-gradient-to-br from-background/80 to-card/80 backdrop-blur-sm border-border/50 hover:bg-gradient-to-br hover:from-accent/5 hover:to-accent/10">
                 <CardContent className="p-4 text-center">
-                  <div
-                    className={`w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-br ${tech.color} p-2 group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <img
-                      src={tech.logo || "/placeholder.svg"}
-                      alt={tech.name}
-                      className="w-full h-full object-contain filter brightness-0 invert"
-                    />
+                  <div className="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                    <img src={tech.icon || "/placeholder.svg"} alt={tech.name} className="w-10 h-10 object-contain" />
                   </div>
-                  <p className="text-sm font-medium group-hover:text-accent transition-colors">{tech.name}</p>
+                  <p className="text-sm font-medium group-hover:text-accent transition-colors text-foreground/90">
+                    {tech.name}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>

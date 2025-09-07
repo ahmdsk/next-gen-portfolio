@@ -4,39 +4,47 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(0.97 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.09 0 0);
+  --card: oklch(0.98 0 0);
+  --card-foreground: oklch(0.09 0 0);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.09 0 0);
+  --primary: oklch(0.15 0 0);
+  --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.646 0.222 285.12);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.556 0 0);
-  --muted-foreground: oklch(0.985 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.94 0 0);
+  --muted-foreground: oklch(0.45 0 0);
   --accent: oklch(0.646 0.222 285.12);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.97 0 0);
-  --ring: oklch(0.646 0.222 285.12 / 0.5);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.96 0 0);
+  --ring: oklch(0.646 0.222 285.12 / 0.3);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.5rem;
-  --sidebar: oklch(0.97 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.09 0 0);
   --sidebar-primary: oklch(0.646 0.222 285.12);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
   --sidebar-accent: oklch(0.6 0.118 184.704);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.646 0.222 285.12 / 0.5);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.646 0.222 285.12 / 0.3);
+  /* Light mode gradient improvements */
+  --gradient-light-primary: linear-gradient(135deg, oklch(0.98 0 0) 0%, oklch(0.95 0.05 285.12) 100%);
+  --gradient-light-secondary: linear-gradient(
+    135deg,
+    oklch(0.646 0.222 285.12 / 0.1) 0%,
+    oklch(0.6 0.118 184.704 / 0.1) 100%
+  );
+  --shadow-light: 0 4px 20px oklch(0.646 0.222 285.12 / 0.1);
 }
 
 .dark {
@@ -72,6 +80,14 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.646 0.222 285.12 / 0.5);
+  /* Dark mode gradient improvements */
+  --gradient-dark-primary: linear-gradient(135deg, oklch(0.145 0 0) 0%, oklch(0.205 0.05 285.12) 100%);
+  --gradient-dark-secondary: linear-gradient(
+    135deg,
+    oklch(0.646 0.222 285.12 / 0.2) 0%,
+    oklch(0.6 0.118 184.704 / 0.2) 100%
+  );
+  --shadow-dark: 0 4px 20px oklch(0 0 0 / 0.3);
 }
 
 @theme inline {
@@ -121,11 +137,8 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-
-  /* Added smooth scrolling and enhanced animations */
-  html {
-    scroll-behavior: smooth;
+    /* Added smooth transitions for theme switching */
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Custom gradient animations */
@@ -152,10 +165,29 @@
   /* Backdrop blur utilities */
   .backdrop-blur-glass {
     backdrop-filter: blur(12px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .dark .backdrop-blur-glass {
     background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Light mode specific enhancements */
+  .light-gradient-bg {
+    background: var(--gradient-light-primary);
+  }
+
+  .light-card-shadow {
+    box-shadow: var(--shadow-light);
+  }
+
+  .dark .light-gradient-bg {
+    background: var(--gradient-dark-primary);
+  }
+
+  .dark .light-card-shadow {
+    box-shadow: var(--shadow-dark);
   }
 }

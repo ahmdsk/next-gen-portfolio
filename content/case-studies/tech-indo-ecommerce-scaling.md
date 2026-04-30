@@ -56,5 +56,5 @@ The impact was phenomenal. During the next Harbolnas event, TechIndo achieved:
 - **Latency Reduction**: 99th percentile (p99) API latency dropped from 2.5s to 120ms.
 - **Revenue Protection**: Achieved 100% transaction success rate during peak traffic spikes.
 
-> "Kolaborasi dengan NextGenInfinity sangat luar biasa. Mereka tidak hanya memberikan kode, tapi juga fondasi arsitektur kelas dunia untuk masa depan TechIndo."
+> "The collaboration with NextGenInfinity has been incredible. They've provided not only the code, but also a world-class architectural foundation for TechIndo's future."
 > — *VP of Engineering, TechIndo Nusantara*

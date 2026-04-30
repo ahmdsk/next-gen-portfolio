@@ -4,7 +4,11 @@ import { Urbanist, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Suspense } from "react"
-import "./globals.css"
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
+import "../globals.css"
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -25,21 +29,35 @@ export const metadata: Metadata = {
   generator: "v0.app",
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode
-}>) {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+ 
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${urbanist.variable} ${inter.variable} font-sans antialiased bg-background text-foreground transition-colors duration-500`}>
-        <Suspense fallback={null}>
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-            {children}
-          </ThemeProvider>
-        </Suspense>
-        <Analytics />
+        <NextIntlClientProvider messages={messages}>
+          <Suspense fallback={null}>
+            <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+              {children}
+            </ThemeProvider>
+          </Suspense>
+          <Analytics />
+        </NextIntlClientProvider>
       </body>
     </html>
   )
 }
+

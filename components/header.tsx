@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { LanguageSwitcher } from "@/components/language-switcher"
 import { Menu, X } from "lucide-react"
 
 export function Header() {
@@ -36,7 +37,7 @@ export function Header() {
           }`}
       >
         <div className="text-2xl font-black tracking-tighter text-foreground">
-          NextGen<span className="text-accent">Infinity</span>
+          NextGen<span className="text-blue-600 dark:text-blue-500">Infinity</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -45,20 +46,22 @@ export function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-all duration-300"
+              className="text-sm font-semibold tracking-wide text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all duration-300"
             >
               {item.name}
             </a>
           ))}
           <div className="h-4 w-px bg-border" />
+          <LanguageSwitcher />
           <ThemeToggle />
-          <Button size="sm" className="bg-accent hover:bg-accent/90 text-white font-bold rounded-full px-8 h-11 transition-transform hover:scale-105 active:scale-95">
+          <Button size="sm" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 text-white font-bold rounded-full px-8 h-11 transition-transform hover:scale-105 active:scale-95">
             Contact Us
           </Button>
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
           <ThemeToggle />
           <button
             className="text-foreground p-1 transition-transform active:scale-90"

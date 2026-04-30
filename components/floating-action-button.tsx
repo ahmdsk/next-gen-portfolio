@@ -1,36 +1,49 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { MessageCircle, X, Phone, Mail, Calendar } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function FloatingActionButton() {
   const [isOpen, setIsOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const t = useTranslations('Floating')
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
   const actions = [
     {
       icon: Phone,
-      label: "Direct Line",
+      label: t('directLine'),
       href: "tel:+6281234567890",
       color: "bg-emerald-500",
     },
     {
       icon: Mail,
-      label: "Inquiry",
+      label: t('inquiry'),
       href: "mailto:hello@nextgeninfinity.com",
       color: "bg-blue-500",
     },
     {
       icon: Calendar,
-      label: "Schedule",
+      label: t('schedule'),
       href: "#consultation",
       color: "bg-purple-500",
     },
   ]
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div ref={menuRef} className="fixed bottom-6 right-6 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div

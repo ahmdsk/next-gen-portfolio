@@ -1,13 +1,108 @@
 {
+  "Header": {
+    "navServices": "Layanan",
+    "navTech": "Teknologi",
+    "navProcess": "Proses",
+    "navContact": "Kontak",
+    "contactUs": "Hubungi Kami"
+  },
   "Hero": {
     "title1": "Membangun",
     "title2": "Solusi",
     "title3": "Elit",
     "description": "Kami membangun sistem digital tingkat enterprise yang skalabel yang mendefinisikan ulang cara bisnis beroperasi di era modern.",
-    "startProject": "Mulai Proyek Anda",
-    "viewCaseStudies": "Lihat Studi Kasus",
-    "stat1": "Proyek Aktif",
-    "stat2": "Klien Perusahaan",
-    "stat3": "Jangkauan Global"
+    "startProject": "Mulai Proyek",
+    "viewCaseStudies": "Studi Kasus",
+    "stat1Number": "500+",
+    "stat1Text": "Proyek Aktif",
+    "stat2Number": "99.9%",
+    "stat2Text": "SLA Perusahaan",
+    "stat3Number": "24/7",
+    "stat3Text": "Jangkauan Global"
+  },
+  "Services": {
+    "title": "Solusi",
+    "titleAccent": "Inti",
+    "subtitle": "Kami menghadirkan keunggulan digital dari awal hingga akhir melalui rekayasa strategis dan desain visioner.",
+    "service1Title": "Sistem Web Perusahaan",
+    "service1Desc": "Membangun infrastruktur web yang skalabel dan tangguh untuk mendorong ketangkasan bisnis.",
+    "service2Title": "Mobilitas Native",
+    "service2Desc": "Ekosistem mobile berkinerja tinggi yang disesuaikan untuk integrasi perusahaan tanpa batas.",
+    "service3Title": "Desain Pengalaman",
+    "service3Desc": "Strategi UX human-centric yang mendefinisikan ulang keterlibatan digital dan loyalitas merek.",
+    "service4Title": "Optimisasi Sistem",
+    "service4Desc": "Rekayasa performa untuk memaksimalkan hasil dan meminimalkan latensi di seluruh sistem Anda."
+  },
+  "Tech": {
+    "title": "Teknologi",
+    "titleAccent": "Kami",
+    "subtitle": "Didukung oleh teknologi modern, kuat, dan skalabel."
+  },
+  "Consultation": {
+    "title": "Konsultasi Strategis",
+    "subtitle": "Kami menyediakan analisis teknis ahli dan tinjauan strategis untuk memastikan investasi digital Anda menghasilkan nilai bisnis maksimum.",
+    "benefit1": "Audit Kelayakan Teknis Komprehensif",
+    "benefit2": "Peta Jalan Transformasi Digital Khusus",
+    "benefit3": "Infrastruktur Skalabel dan Pemodelan Anggaran",
+    "benefit4": "Akses Langsung ke Pimpinan Teknis Senior",
+    "scheduleButton": "Jadwalkan Pengarahan Eksekutif",
+    "method1Title": "Penasihat Strategis",
+    "method1Desc": "Terhubung dengan insinyur utama kami untuk strategi teknis tingkat tinggi dan perencanaan peta jalan.",
+    "method2Title": "Panggilan Langsung",
+    "method2Desc": "Pengarahan verbal mendalam untuk memperjelas cakupan proyek dan persyaratan teknis.",
+    "method3Title": "Pengarahan Eksekutif",
+    "method3Desc": "Sesi penemuan virtual untuk menyelaraskan tujuan digital dengan hasil bisnis."
+  },
+  "Contact": {
+    "title": "Siap untuk",
+    "titleAccent": "Berinovasi?",
+    "subtitle": "Mari bangun generasi berikutnya dari ekosistem digital Anda.",
+    "name": "Nama Lengkap",
+    "email": "Email Perusahaan",
+    "message": "Detail Proyek",
+    "submit": "Kirim Pertanyaan"
+  },
+  "CTA": {
+    "title": "Akselerasikan",
+    "titleAccent": "Masa Depanmu",
+    "subtitle": "Bermitra dengan NextGenInfinity untuk mengubah organisasi Anda melalui rekayasa teknis elit dan strategi digital visioner.",
+    "btnPrimary": "Mulai Proyek",
+    "btnSecondary": "Unduh Kapabilitas",
+    "benefit1": "Konsultasi Strategis",
+    "benefit2": "Audit Performa",
+    "benefit3": "Rekayasa Skalabel"
+  },
+  "Footer": {
+    "description": "Memberdayakan perusahaan global melalui rekayasa digital mutakhir. Kami membangun fondasi ekonomi digital.",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Syarat Ketentuan",
+    "company": "Perusahaan",
+    "aboutUs": "Tentang Kami",
+    "ourProcess": "Proses Kami",
+    "portfolio": "Portofolio",
+    "contact": "Kontak",
+    "services": "Layanan",
+    "webDev": "Pengembangan Web",
+    "mobileSolutions": "Solusi Mobile",
+    "uiUxDesign": "Desain UI/UX",
+    "cloudServices": "Layanan Cloud",
+    "insights": "Wawasan",
+    "insightsDesc": "Bergabunglah dengan jaringan eksklusif kami untuk intelijen teknis strategis.",
+    "subscribe": "Berlangganan",
+    "businessEmail": "Email Bisnis",
+    "rights": "© {year} PT NextGen Infinity Solutions. Hak cipta dilindungi undang-undang."
+  },
+  "Floating": {
+    "directLine": "Telepon",
+    "inquiry": "Pertanyaan",
+    "schedule": "Jadwal"
+  },
+  "ContactForm": {
+    "title1": "Mari Bangun",
+    "title2": "Kehebatan",
+    "description": "Siap untuk menskalakan kehadiran digital Anda? Kirimkan ringkasan dan insinyur utama kami akan memberikan audit teknis komprehensif dalam 24 jam.",
+    "directEmail": "Email Langsung",
+    "globalHQ": "Kantor Pusat Global",
+    "projectScope": "Cakupan Proyek"
   }
 }

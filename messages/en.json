@@ -1,4 +1,11 @@
 {
+  "Header": {
+    "navServices": "Services",
+    "navTech": "Tech",
+    "navProcess": "Process",
+    "navContact": "Contact",
+    "contactUs": "Contact Us"
+  },
   "Hero": {
     "title1": "Architecting",
     "title2": "Elite",
@@ -6,8 +13,96 @@
     "description": "We build scalable, enterprise-grade digital systems that redefine how businesses operate in the modern age.",
     "startProject": "Start Your Project",
     "viewCaseStudies": "View Case Studies",
-    "stat1": "Active Projects",
-    "stat2": "Enterprise Clients",
-    "stat3": "Global Reach"
+    "stat1Number": "500+",
+    "stat1Text": "Active Projects",
+    "stat2Number": "99.9%",
+    "stat2Text": "Enterprise SLA",
+    "stat3Number": "24/7",
+    "stat3Text": "Global Reach"
+  },
+  "Services": {
+    "title": "Core",
+    "titleAccent": "Solutions",
+    "subtitle": "We deliver end-to-end digital excellence through strategic engineering and visionary design.",
+    "service1Title": "Enterprise Web Systems",
+    "service1Desc": "Architecting scalable, resilient web infrastructures that drive business agility and operational efficiency.",
+    "service2Title": "Native Mobility",
+    "service2Desc": "High-performance mobile ecosystems tailored for seamless enterprise integration.",
+    "service3Title": "Experience Design",
+    "service3Desc": "Human-centric UX strategies that redefine digital engagement and brand loyalty.",
+    "service4Title": "System Optimization",
+    "service4Desc": "Performance engineering to maximize throughput and minimize latency across your stack."
+  },
+  "Tech": {
+    "title": "Our",
+    "titleAccent": "Stack",
+    "subtitle": "Powered by modern, robust, and scalable technologies."
+  },
+  "Consultation": {
+    "title": "Strategic Consultation",
+    "subtitle": "We provide expert technical analysis and strategic foresight to ensure your digital investments yield maximum enterprise value.",
+    "benefit1": "Comprehensive Technical Feasibility Audit",
+    "benefit2": "Tailored Digital Transformation Roadmap",
+    "benefit3": "Scalable Infrastructure and Budget Modeling",
+    "benefit4": "Direct Access to Senior Technical Leadership",
+    "scheduleButton": "Schedule an Executive Briefing",
+    "method1Title": "Strategic Advisory",
+    "method1Desc": "Connect with our principal engineers for high-level technical strategy and roadmap planning.",
+    "method2Title": "Voice Direct",
+    "method2Desc": "In-depth verbal briefings to clarify project scope and technical requirements.",
+    "method3Title": "Executive Briefing",
+    "method3Desc": "Virtual discovery sessions to align digital objectives with business outcomes."
+  },
+  "Contact": {
+    "title": "Ready to",
+    "titleAccent": "Innovate?",
+    "subtitle": "Let's architect the next generation of your digital ecosystem.",
+    "name": "Full Name",
+    "email": "Corporate Email",
+    "message": "Project Details",
+    "submit": "Submit Inquiry"
+  },
+  "CTA": {
+    "title": "Accelerate Your",
+    "titleAccent": "Future",
+    "subtitle": "Partner with NextGenInfinity to transform your organization through elite technical engineering and visionary digital strategy.",
+    "btnPrimary": "Initialize Project",
+    "btnSecondary": "Download Capabilities",
+    "benefit1": "Strategic Consultation",
+    "benefit2": "Performance Audits",
+    "benefit3": "Scalable Engineering"
+  },
+  "Footer": {
+    "description": "Empowering global enterprises through state-of-the-art digital engineering. We architect the foundations of the digital economy.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "ourProcess": "Our Process",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "services": "Services",
+    "webDev": "Web Development",
+    "mobileSolutions": "Mobile Solutions",
+    "uiUxDesign": "UI/UX Design",
+    "cloudServices": "Cloud Services",
+    "insights": "Insights",
+    "insightsDesc": "Join our exclusive network for strategic technical intelligence.",
+    "subscribe": "Subscribe",
+    "businessEmail": "Business Email",
+    "rights": "© {year} PT NextGen Infinity Solutions. All rights reserved."
+  },
+  "Floating": {
+    "directLine": "Direct Line",
+    "inquiry": "Inquiry",
+    "schedule": "Schedule"
+  },
+  "ContactForm": {
+    "title1": "Let's Build",
+    "title2": "Greatness",
+    "description": "Ready to scale your digital presence? Send us a brief and our principal engineers will provide a comprehensive technical audit within 24 hours.",
+    "directEmail": "Direct Email",
+    "globalHQ": "Global HQ",
+    "projectScope": "Project Scope"
   }
 }

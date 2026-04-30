@@ -11,6 +11,7 @@ import { FadeIn } from "@/components/react-bits/fade-in"
 import { SlideIn } from "@/components/react-bits/slide-in"
 import { Send, CheckCircle, Loader2 } from "lucide-react"
 import { toast } from "sonner"
+import { useTranslations } from "next-intl"
 
 interface FormData {
   name: string
@@ -20,6 +21,8 @@ interface FormData {
 }
 
 export function ContactForm() {
+  const t = useTranslations('ContactForm')
+  const tContact = useTranslations('Contact')
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -74,12 +77,11 @@ export function ContactForm() {
               <div className="space-y-12">
                 <div>
                   <h2 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter font-heading text-foreground">
-                    Let&apos;s Build <br />
-                    <span className="text-accent">Greatness</span>
+                    {t('title1')} <br />
+                    <span className="text-blue-600 dark:text-blue-500">{t('title2')}</span>
                   </h2>
                   <p className="text-xl text-muted-foreground max-w-lg font-body leading-relaxed">
-                    Ready to scale your digital presence? Send us a brief and our principal engineers will provide 
-                    a comprehensive technical audit within 24 hours.
+                    {t('description')}
                   </p>
                 </div>
 
@@ -89,17 +91,17 @@ export function ContactForm() {
                       <Send className="h-6 w-6 text-accent" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Direct Email</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">{t('directEmail')}</p>
                       <p className="text-xl font-bold text-foreground">hello@nextgeninfinity.com</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-6 group">
-                    <div className="w-14 h-14 bg-secondary dark:bg-white/5 rounded-2xl flex items-center justify-center border border-border group-hover:border-accent/50 transition-colors shadow-sm">
-                      <Loader2 className="h-6 w-6 text-accent" />
+                    <div className="w-14 h-14 bg-secondary dark:bg-white/5 rounded-2xl flex items-center justify-center border border-border group-hover:border-blue-500/50 transition-colors shadow-sm">
+                      <Loader2 className="h-6 w-6 text-blue-600 dark:text-blue-500" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Global HQ</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">{t('globalHQ')}</p>
                       <p className="text-xl font-bold text-foreground">Bandar Lampung, Indonesia</p>
                     </div>
                   </div>
@@ -112,11 +114,11 @@ export function ContactForm() {
                 <div className="absolute top-0 right-0 p-8 opacity-5 dark:opacity-10">
                   <Send size={150} />
                 </div>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Full Name</label>
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">{tContact('name')}</label>
                       <Input
                         name="name"
                         placeholder="John Doe"
@@ -127,7 +129,7 @@ export function ContactForm() {
                       />
                     </div>
                     <div className="space-y-3">
-                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Email Address</label>
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">{tContact('email')}</label>
                       <Input
                         name="email"
                         type="email"
@@ -139,9 +141,9 @@ export function ContactForm() {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3">
-                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Project Scope</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">{t('projectScope')}</label>
                     <Input
                       name="subject"
                       placeholder="Enterprise Web Application"
@@ -153,7 +155,7 @@ export function ContactForm() {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Message</label>
+                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">{tContact('message')}</label>
                     <Textarea
                       name="message"
                       placeholder="Describe your technical requirements and business objectives..."
@@ -168,7 +170,7 @@ export function ContactForm() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-20 bg-accent hover:bg-accent/90 text-white font-bold rounded-2xl shadow-xl shadow-accent/20 transition-all duration-300 font-accent text-lg active:scale-95"
+                    className="w-full h-20 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/20 transition-all duration-300 font-accent text-lg active:scale-95"
                   >
                     {isSubmitting ? (
                       <>
@@ -177,12 +179,13 @@ export function ContactForm() {
                       </>
                     ) : (
                       <>
-                        Send Inquiry
+                        {tContact('submit')}
                         <Send className="ml-3 h-5 w-5" />
                       </>
                     )}
                   </Button>
                 </form>
+
               </Card>
             </SlideIn>
           </div>

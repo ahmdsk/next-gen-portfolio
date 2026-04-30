@@ -20,21 +20,22 @@ const technologies = [
 
 import { StaggerContainer } from "@/components/react-bits/stagger-container"
 import { ScaleIn } from "@/components/react-bits/scale-in"
+import { useTranslations } from "next-intl"
 
 export function TechSection() {
   const gridRef = useRef<HTMLDivElement>(null)
+  const t = useTranslations('Tech')
 
   return (
     <section id="tech" className="py-32 bg-transparent transition-colors duration-500">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
           <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter font-heading">
-              Our <span className="text-accent">Stack</span>
+            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter font-heading text-slate-900 dark:text-white">
+              {t('title')} <span className="text-blue-600 dark:text-blue-500">{t('titleAccent')}</span>
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground font-body max-w-2xl">
-              We leverage elite technologies to architect resilient,
-              scalable, and high-performance digital ecosystems.
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-body max-w-2xl">
+              {t('subtitle')}
             </p>
           </div>
         </div>

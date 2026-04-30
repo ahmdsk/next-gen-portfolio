@@ -6,10 +6,12 @@ import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { Menu, X } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const t = useTranslations('Header')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,10 +22,10 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { name: "Services", href: "#services" },
-    { name: "Tech", href: "#tech" },
-    { name: "Process", href: "#consultation" },
-    { name: "Contact", href: "#contact" },
+    { name: t('navServices'), href: "#services" },
+    { name: t('navTech'), href: "#tech" },
+    { name: t('navProcess'), href: "#consultation" },
+    { name: t('navContact'), href: "#contact" },
   ]
 
   return (
@@ -44,7 +46,7 @@ export function Header() {
         <nav className="hidden md:flex items-center space-x-10">
           {navItems.map((item) => (
             <a
-              key={item.name}
+              key={item.href}
               href={item.href}
               className="text-sm font-semibold tracking-wide text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all duration-300"
             >
@@ -55,7 +57,7 @@ export function Header() {
           <LanguageSwitcher />
           <ThemeToggle />
           <Button size="sm" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 text-white font-bold rounded-full px-8 h-11 transition-transform hover:scale-105 active:scale-95">
-            Contact Us
+            {t('contactUs')}
           </Button>
         </nav>
 
@@ -84,7 +86,7 @@ export function Header() {
             <div className="flex flex-col space-y-8">
               {navItems.map((item) => (
                 <a
-                  key={item.name}
+                  key={item.href}
                   href={item.href}
                   className="text-xl font-semibold tracking-tighter text-foreground hover:text-accent transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -92,8 +94,8 @@ export function Header() {
                   {item.name}
                 </a>
               ))}
-              <Button className="w-full bg-accent hover:bg-accent/90 text-white font-bold rounded-2xl h-16 text-lg transition-transform active:scale-95">
-                Contact Us
+              <Button className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 text-white font-bold rounded-2xl h-16 text-lg transition-transform active:scale-95">
+                {t('contactUs')}
               </Button>
             </div>
           </motion.div>
@@ -102,4 +104,5 @@ export function Header() {
     </header>
   )
 }
+
 

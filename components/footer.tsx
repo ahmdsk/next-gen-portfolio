@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Github, Twitter, Instagram, Linkedin } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 const socialLinks = [
   { icon: Github, href: "#", label: "Github" },
@@ -11,28 +12,30 @@ const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
 ]
 
-const footerLinks = [
-  {
-    title: "Company",
-    links: [
-      { name: "About Us", href: "#" },
-      { name: "Our Process", href: "#" },
-      { name: "Portfolio", href: "#" },
-      { name: "Contact", href: "#contact" },
-    ],
-  },
-  {
-    title: "Services",
-    links: [
-      { name: "Web Development", href: "#services" },
-      { name: "Mobile Solutions", href: "#services" },
-      { name: "UI/UX Design", href: "#services" },
-      { name: "Cloud Services", href: "#services" },
-    ],
-  },
-]
-
 export function Footer() {
+  const t = useTranslations('Footer')
+
+  const footerLinks = [
+    {
+      title: t('company'),
+      links: [
+        { name: t('aboutUs'), href: "#" },
+        { name: t('ourProcess'), href: "#" },
+        { name: t('portfolio'), href: "#" },
+        { name: t('contact'), href: "#contact" },
+      ],
+    },
+    {
+      title: t('services'),
+      links: [
+        { name: t('webDev'), href: "#services" },
+        { name: t('mobileSolutions'), href: "#services" },
+        { name: t('uiUxDesign'), href: "#services" },
+        { name: t('cloudServices'), href: "#services" },
+      ],
+    },
+  ]
+
   return (
     <footer className="bg-background pt-32 pb-16 text-foreground border-t border-border/50 transition-colors duration-500">
       <div className="container mx-auto px-4">
@@ -42,8 +45,7 @@ export function Footer() {
               NextGen<span className="text-accent">Infinity</span>
             </h3>
             <p className="text-muted-foreground leading-relaxed font-body text-lg">
-              Empowering global enterprises through state-of-the-art digital engineering. We architect
-              the foundations of the digital economy.
+              {t('description')}
             </p>
             <div className="flex space-x-6">
               {socialLinks.map((social) => (
@@ -64,7 +66,7 @@ export function Footer() {
               <ul className="space-y-6">
                 {group.links.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-muted-foreground hover:text-accent transition-colors font-body">
+                    <a href={link.href} className="text-muted-foreground hover:text-blue-600 dark:hover:text-blue-500 transition-colors font-body">
                       {link.name}
                     </a>
                   </li>
@@ -74,15 +76,15 @@ export function Footer() {
           ))}
 
           <div>
-            <h4 className="text-foreground font-bold uppercase tracking-widest text-sm mb-10">Insights</h4>
-            <p className="text-muted-foreground mb-8 font-body">Join our exclusive network for strategic technical intelligence.</p>
+            <h4 className="text-foreground font-bold uppercase tracking-widest text-sm mb-10">{t('insights')}</h4>
+            <p className="text-muted-foreground mb-8 font-body">{t('insightsDesc')}</p>
             <div className="flex flex-col gap-4">
               <Input
-                placeholder="Business Email"
-                className="h-14 bg-secondary border-border focus:border-accent rounded-xl px-6"
+                placeholder={t('businessEmail')}
+                className="h-14 bg-secondary border-border focus:border-blue-500 rounded-xl px-6"
               />
-              <Button className="w-full h-14 bg-accent hover:bg-accent/90 text-white font-bold rounded-xl shadow-lg shadow-accent/20 transition-transform active:scale-95">
-                Subscribe
+              <Button className="w-full h-14 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/20 transition-transform active:scale-95">
+                {t('subscribe')}
               </Button>
             </div>
           </div>
@@ -90,11 +92,11 @@ export function Footer() {
 
         <div className="border-t border-border/50 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-muted-foreground text-sm font-body">
-            © {new Date().getFullYear()} PT NextGen Infinity Solutions. All rights reserved.
+            {t('rights', { year: new Date().getFullYear() })}
           </p>
           <div className="flex gap-10 text-sm text-muted-foreground font-body">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-foreground transition-colors">{t('privacy')}</a>
+            <a href="#" className="hover:text-foreground transition-colors">{t('terms')}</a>
           </div>
         </div>
       </div>

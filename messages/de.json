@@ -1,13 +1,108 @@
 {
+  "Header": {
+    "navServices": "Dienste",
+    "navTech": "Technik",
+    "navProcess": "Prozess",
+    "navContact": "Kontakt",
+    "contactUs": "Kontaktieren"
+  },
   "Hero": {
     "title1": "Architektur",
     "title2": "Elite",
     "title3": "Lösungen",
     "description": "Wir entwickeln skalierbare digitale Systeme auf Unternehmensebene, die die Art und Weise, wie Unternehmen im modernen Zeitalter operieren, neu definieren.",
     "startProject": "Projekt Starten",
-    "viewCaseStudies": "Fallstudien Ansehen",
-    "stat1": "Aktive Projekte",
-    "stat2": "Unternehmenskunden",
-    "stat3": "Globale Reichweite"
+    "viewCaseStudies": "Fallstudien",
+    "stat1Number": "500+",
+    "stat1Text": "Aktive Projekte",
+    "stat2Number": "99.9%",
+    "stat2Text": "Enterprise SLA",
+    "stat3Number": "24/7",
+    "stat3Text": "Globale Reichweite"
+  },
+  "Services": {
+    "title": "Kern",
+    "titleAccent": "Lösungen",
+    "subtitle": "Wir liefern digitale Exzellenz durch strategisches Engineering und visionäres Design.",
+    "service1Title": "Unternehmens Web",
+    "service1Desc": "Architektur skalierbarer, widerstandsfähiger Web-Infrastrukturen zur Steigerung der geschäftlichen Agilität.",
+    "service2Title": "Native Mobilität",
+    "service2Desc": "Leistungsstarke mobile Ökosysteme, maßgeschneidert für nahtlose Unternehmensintegration.",
+    "service3Title": "Erlebnisdesign",
+    "service3Desc": "Menschzentrierte UX-Strategien, die digitales Engagement neu definieren.",
+    "service4Title": "Systemoptimierung",
+    "service4Desc": "Performance-Engineering zur Maximierung des Durchsatzes und Minimierung der Latenz."
+  },
+  "Tech": {
+    "title": "Unsere",
+    "titleAccent": "Technologien",
+    "subtitle": "Angetrieben von modernen, robusten und skalierbaren Technologien."
+  },
+  "Consultation": {
+    "title": "Strategische Beratung",
+    "subtitle": "Wir bieten fachmännische technische Analysen und strategische Voraussicht, um sicherzustellen, dass Ihre digitalen Investitionen maximalen Unternehmenswert erzielen.",
+    "benefit1": "Umfassende Prüfung der technischen Machbarkeit",
+    "benefit2": "Maßgeschneiderte Roadmap für die digitale Transformation",
+    "benefit3": "Skalierbare Infrastruktur und Budgetmodellierung",
+    "benefit4": "Direkter Zugang zur technischen Führungsspitze",
+    "scheduleButton": "Executive Briefing planen",
+    "method1Title": "Strategische Beratung",
+    "method1Desc": "Vernetzen Sie sich mit unseren leitenden Ingenieuren für übergeordnete technische Strategien und Roadmap-Planungen.",
+    "method2Title": "Direktanruf",
+    "method2Desc": "Ausführliche mündliche Briefings zur Klärung des Projektumfangs und der technischen Anforderungen.",
+    "method3Title": "Executive Briefing",
+    "method3Desc": "Virtuelle Discovery-Sessions zur Abstimmung der digitalen Ziele auf die Geschäftsergebnisse."
+  },
+  "Contact": {
+    "title": "Bereit für",
+    "titleAccent": "Innovationen?",
+    "subtitle": "Lassen Sie uns die nächste Generation Ihres digitalen Ökosystems aufbauen.",
+    "name": "Vollständiger Name",
+    "email": "Geschäftliche E-Mail",
+    "message": "Projektdetails",
+    "submit": "Anfrage Senden"
+  },
+  "CTA": {
+    "title": "Beschleunigen Sie Ihre",
+    "titleAccent": "Zukunft",
+    "subtitle": "Arbeiten Sie mit NextGenInfinity zusammen, um Ihr Unternehmen durch erstklassiges technisches Engineering und visionäre digitale Strategien zu transformieren.",
+    "btnPrimary": "Projekt Initialisieren",
+    "btnSecondary": "Fähigkeiten Herunterladen",
+    "benefit1": "Strategische Beratung",
+    "benefit2": "Leistungsaudits",
+    "benefit3": "Skalierbares Engineering"
+  },
+  "Footer": {
+    "description": "Wir stärken globale Unternehmen durch modernstes digitales Engineering.",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "company": "Unternehmen",
+    "aboutUs": "Über Uns",
+    "ourProcess": "Unser Prozess",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt",
+    "services": "Dienstleistungen",
+    "webDev": "Webentwicklung",
+    "mobileSolutions": "Mobile Lösungen",
+    "uiUxDesign": "UI/UX-Design",
+    "cloudServices": "Cloud-Dienste",
+    "insights": "Einblicke",
+    "insightsDesc": "Treten Sie unserem exklusiven Netzwerk für strategische technische Intelligenz bei.",
+    "subscribe": "Abonnieren",
+    "businessEmail": "Geschäftliche E-Mail",
+    "rights": "© {year} PT NextGen Infinity Solutions. Alle Rechte vorbehalten."
+  },
+  "Floating": {
+    "directLine": "Direktwahl",
+    "inquiry": "Anfrage",
+    "schedule": "Zeitplan"
+  },
+  "ContactForm": {
+    "title1": "Lassen Sie uns",
+    "title2": "Großes Bauen",
+    "description": "Bereit, Ihre digitale Präsenz zu skalieren? Senden Sie uns ein Briefing und unsere leitenden Ingenieure werden innerhalb von 24 Stunden ein umfassendes technisches Audit durchführen.",
+    "directEmail": "Direkte E-Mail",
+    "globalHQ": "Globaler Hauptsitz",
+    "projectScope": "Projektumfang"
   }
 }

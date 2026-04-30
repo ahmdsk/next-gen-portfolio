@@ -3,49 +3,50 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Monitor, Smartphone, Palette, Zap, ArrowUpRight } from "lucide-react";
-import { animate, stagger } from "animejs";
 import { useEffect, useRef } from "react";
-
-const services = [
-  {
-    icon: Monitor,
-    title: "Enterprise Web Systems",
-    description: "Architecting scalable, resilient web infrastructures that drive business agility and operational efficiency.",
-    className: "md:col-span-2 md:row-span-2",
-    color: "bg-blue-50 dark:bg-blue-500/10",
-    iconColor: "text-blue-600 dark:text-blue-400",
-  },
-  {
-    icon: Smartphone,
-    title: "Native Mobility",
-    description: "High-performance mobile ecosystems tailored for seamless enterprise integration.",
-    className: "md:col-span-1 md:row-span-1",
-    color: "bg-emerald-50 dark:bg-emerald-500/10",
-    iconColor: "text-emerald-600 dark:text-emerald-400",
-  },
-  {
-    icon: Palette,
-    title: "Experience Design",
-    description: "Human-centric UX strategies that redefine digital engagement and brand loyalty.",
-    className: "md:col-span-1 md:row-span-2",
-    color: "bg-purple-50 dark:bg-purple-500/10",
-    iconColor: "text-purple-600 dark:text-purple-400",
-  },
-  {
-    icon: Zap,
-    title: "System Optimization",
-    description: "Performance engineering to maximize throughput and minimize latency across your stack.",
-    className: "md:col-span-1 md:row-span-1",
-    color: "bg-orange-50 dark:bg-orange-500/10",
-    iconColor: "text-orange-600 dark:text-orange-400",
-  },
-];
+import { useTranslations } from "next-intl";
 
 import { StaggerContainer } from "@/components/react-bits/stagger-container";
 import { SlideIn } from "@/components/react-bits/slide-in";
 
 export function ServicesSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations('Services');
+
+  const services = [
+    {
+      icon: Monitor,
+      title: t('service1Title'),
+      description: t('service1Desc'),
+      className: "md:col-span-2 md:row-span-2",
+      color: "bg-blue-50 dark:bg-blue-500/10",
+      iconColor: "text-blue-600 dark:text-blue-400",
+    },
+    {
+      icon: Smartphone,
+      title: t('service2Title'),
+      description: t('service2Desc'),
+      className: "md:col-span-1 md:row-span-1",
+      color: "bg-emerald-50 dark:bg-emerald-500/10",
+      iconColor: "text-emerald-600 dark:text-emerald-400",
+    },
+    {
+      icon: Palette,
+      title: t('service3Title'),
+      description: t('service3Desc'),
+      className: "md:col-span-1 md:row-span-2",
+      color: "bg-purple-50 dark:bg-purple-500/10",
+      iconColor: "text-purple-600 dark:text-purple-400",
+    },
+    {
+      icon: Zap,
+      title: t('service4Title'),
+      description: t('service4Desc'),
+      className: "md:col-span-1 md:row-span-1",
+      color: "bg-orange-50 dark:bg-orange-500/10",
+      iconColor: "text-orange-600 dark:text-orange-400",
+    },
+  ];
 
   return (
     <section id="services" className="py-32 pb-48 relative overflow-hidden bg-slate-50 dark:bg-slate-950/50 transition-colors duration-500 border-y border-slate-200 dark:border-slate-800/50">
@@ -61,7 +62,7 @@ export function ServicesSection() {
                whileInView={{ y: 0 }}
                transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
             >
-              Core <span className="text-blue-600 dark:text-blue-400">Solutions</span>
+              {t('title')} <span className="text-blue-600 dark:text-blue-400">{t('titleAccent')}</span>
             </motion.span>
           </motion.h2>
           <motion.p
@@ -70,7 +71,7 @@ export function ServicesSection() {
             transition={{ delay: 0.1 }}
             className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-body"
           >
-            We deliver end-to-end digital excellence through strategic engineering and visionary design.
+            {t('subtitle')}
           </motion.p>
         </div>
 
@@ -79,7 +80,7 @@ export function ServicesSection() {
         >
           {services.map((service, index) => (
             <SlideIn
-              key={service.title}
+              key={index}
               direction={index % 2 === 0 ? "left" : "right"}
               delay={index * 0.1}
               className={service.className}

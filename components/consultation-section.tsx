@@ -11,112 +11,99 @@ import { MessageSquare, Phone, Video, CheckCircle } from "lucide-react"
 const consultationMethods = [
   {
     icon: MessageSquare,
-    title: "Chat Santai",
-    description: "Ngobrol real-time lewat chat buat konsultasi yang cepet dan gak ribet!",
+    title: "Strategic Advisory",
+    description: "Connect with our principal engineers for high-level technical strategy and roadmap planning.",
     gradient: "from-blue-500/10 to-cyan-500/10",
   },
   {
     icon: Phone,
-    title: "Telpon Aja",
-    description: "Konsultasi mendalam lewat telpon sama tim expert kita yang asik banget",
+    title: "Voice Direct",
+    description: "In-depth verbal briefings to clarify project scope and technical requirements.",
     gradient: "from-green-500/10 to-emerald-500/10",
   },
   {
     icon: Video,
-    title: "Video Call",
-    description: "Meeting virtual buat presentasi dan diskusi detail project kamu dengan lebih personal",
+    title: "Executive Briefing",
+    description: "Virtual discovery sessions to align digital objectives with business outcomes.",
     gradient: "from-purple-500/10 to-pink-500/10",
   },
 ]
 
 const benefits = [
-  "Konsultasi gratis buat project pertama kamu!",
-  "Analisis kebutuhan bisnis yang detail banget",
-  "Estimasi timeline dan budget yang akurat",
-  "Roadmap pengembangan yang jelas dan mudah dipahami",
+  "Comprehensive Technical Feasibility Audit",
+  "Tailored Digital Transformation Roadmap",
+  "Scalable Infrastructure and Budget Modeling",
+  "Direct Access to Senior Technical Leadership",
 ]
 
 export function ConsultationSection() {
   return (
-    <section id="consultation" className="py-20 bg-gradient-to-b from-background to-card/30">
+    <section id="consultation" className="py-32 bg-secondary/50 dark:bg-slate-900/20 transition-colors duration-500 border-y border-white/5">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <SlideIn direction="left" delay={0.2}>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
-                Konsultasi{" "}
-                <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">Gratis</span>{" "}
-                Sama Tim Kece Kita! 💬
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 text-pretty leading-relaxed">
-                Dapetin konsultasi profesional buat analisis kebutuhan bisnis kamu. Tim expert kita siap bantu rencanain
-                solusi digital yang pas banget buat kamu! ✨
-              </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 className="text-5xl md:text-7xl font-extrabold mb-10 tracking-tighter font-heading reveal-text">
+              <motion.span
+                initial={{ y: "100%" }}
+                whileInView={{ y: 0 }}
+                transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
+              >
+                Strategic Consultation
+              </motion.span>
+            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 font-body leading-relaxed">
+              We provide expert technical analysis and strategic foresight to ensure your digital
+              investments yield maximum enterprise value.
+            </p>
 
-              <StaggerContainer staggerDelay={0.1} className="space-y-4 mb-8">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={benefit}
-                    variants={{
-                      hidden: { opacity: 0, x: -20 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    className="flex items-center gap-3 group"
-                  >
-                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0 group-hover:scale-110 transition-transform" />
-                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                      {benefit}
-                    </span>
-                  </motion.div>
-                ))}
-              </StaggerContainer>
-
-              <ScaleIn delay={0.8}>
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-accent-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+            <div className="space-y-6 mb-12">
+              {benefits.map((benefit) => (
+                <div
+                  key={benefit}
+                  className="flex items-center gap-4 group"
                 >
-                  Yuk Konsultasi Sekarang!
-                </Button>
-              </ScaleIn>
-            </div>
-          </SlideIn>
-
-          <SlideIn direction="right" delay={0.4}>
-            <StaggerContainer staggerDelay={0.15} className="space-y-6">
-              {consultationMethods.map((method, index) => (
-                <motion.div
-                  key={method.title}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 },
-                  }}
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Card
-                    className={`hover:shadow-xl transition-all duration-300 group hover:border-accent/50 bg-gradient-to-br ${method.gradient} backdrop-blur-sm border-accent/10`}
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300">
-                          <method.icon className="h-6 w-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
-                            {method.title}
-                          </h3>
-                          <p className="text-muted-foreground text-sm leading-relaxed">{method.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                  <CheckCircle className="h-6 w-6 text-accent flex-shrink-0" />
+                  <span className="text-lg dark:text-slate-300 font-body">
+                    {benefit}
+                  </span>
+                </div>
               ))}
-            </StaggerContainer>
-          </SlideIn>
+            </div>
+
+            <Button
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-white font-bold h-16 px-10 rounded-full shadow-2xl transition-all duration-300 font-accent"
+            >
+              Schedule an Executive Briefing
+            </Button>
+          </div>
+
+          <div className="space-y-6">
+            {consultationMethods.map((method) => (
+              <Card
+                key={method.title}
+                className="hover:shadow-2xl transition-all duration-500 group border-border bg-card/80 dark:bg-white/5 backdrop-blur-xl overflow-hidden relative"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-r ${method.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <CardContent className="p-8 relative z-10">
+                  <div className="flex items-start gap-6">
+                    <div className="w-14 h-14 bg-secondary dark:bg-white/5 rounded-2xl flex items-center justify-center flex-shrink-0 border border-border group-hover:border-accent/50 transition-colors">
+                      <method.icon className="h-7 w-7 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-black mb-3 text-foreground">
+                        {method.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed font-body">{method.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   )
 }
+

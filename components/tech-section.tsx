@@ -1,127 +1,69 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { FadeIn } from "@/components/react-bits/fade-in"
-import { StaggerContainer } from "@/components/react-bits/stagger-container"
+import { useEffect, useRef } from "react"
 
 const technologies = [
-  {
-    name: "React",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    color: "from-blue-400 to-blue-600",
-  },
-  {
-    name: "Next.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
-    color: "from-gray-700 to-black",
-  },
-  {
-    name: "TypeScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-    color: "from-blue-500 to-blue-700",
-  },
-  {
-    name: "Node.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-    color: "from-green-500 to-green-700",
-  },
-  {
-    name: "React Native",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-    color: "from-cyan-400 to-cyan-600",
-  },
-  {
-    name: "Flutter",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
-    color: "from-blue-400 to-sky-500",
-  },
-  {
-    name: "PostgreSQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
-    color: "from-blue-600 to-indigo-600",
-  },
-  {
-    name: "MongoDB",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
-    color: "from-green-600 to-green-800",
-  },
-  {
-    name: "AWS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
-    color: "from-orange-400 to-orange-600",
-  },
-  {
-    name: "Docker",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-    color: "from-blue-500 to-blue-700",
-  },
-  {
-    name: "Figma",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    name: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-    color: "from-red-500 to-red-700",
-  },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+  { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
+  { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" },
+  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Three.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threejs/threejs-original.svg" },
+  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
 ]
 
+import { StaggerContainer } from "@/components/react-bits/stagger-container"
+import { ScaleIn } from "@/components/react-bits/scale-in"
+
 export function TechSection() {
+  const gridRef = useRef<HTMLDivElement>(null)
+
   return (
-    <section id="tech" className="py-20 bg-gradient-to-b from-background via-card/20 to-background">
+    <section id="tech" className="py-32 bg-transparent transition-colors duration-500">
       <div className="container mx-auto px-4">
-        <FadeIn delay={0.2}>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-              Tech Stack Yang <span className="text-accent">Paling Nge-hits!</span> 🔥
+        <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+          <div className="max-w-4xl">
+            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter font-heading">
+              Our <span className="text-accent">Stack</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Kita pake teknologi terbaru dan tools yang lagi trending buat bikin project kamu jadi yang paling kece dan
-              future-ready! ✨
+            <p className="text-xl md:text-2xl text-muted-foreground font-body max-w-2xl">
+              We leverage elite technologies to architect resilient,
+              scalable, and high-performance digital ecosystems.
             </p>
           </div>
-        </FadeIn>
+        </div>
 
-        <StaggerContainer staggerDelay={0.05} className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12">
+        <StaggerContainer
+          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
+        >
           {technologies.map((tech, index) => (
-            <motion.div
+            <ScaleIn
               key={tech.name}
-              variants={{
-                hidden: { opacity: 0, scale: 0.8, y: 20 },
-                visible: { opacity: 1, scale: 1, y: 0 },
-              }}
-              whileHover={{
-                scale: 1.05,
-                y: -5,
-                transition: { duration: 0.2 },
-              }}
-              className="group"
+              delay={index * 0.05}
             >
-              <Card className="hover:shadow-xl transition-all duration-300 hover:border-accent/50 bg-gradient-to-br from-background/80 to-card/80 backdrop-blur-sm border-border/50 hover:bg-gradient-to-br hover:from-accent/5 hover:to-accent/10">
-                <CardContent className="p-4 text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                    <img src={tech.icon || "/placeholder.svg"} alt={tech.name} className="w-10 h-10 object-contain" />
+              <Card className="bg-card/90 dark:bg-card/40 border-border backdrop-blur-sm hover:border-accent/50 transition-all duration-300 premium-shadow">
+                <CardContent className="p-8 flex flex-col items-center justify-center">
+                  <div className="w-14 h-14 mb-6">
+                    <img
+                      src={tech.icon}
+                      alt={tech.name}
+                      className="w-full h-full object-contain filter grayscale dark:invert-[0.1] hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                  <p className="text-sm font-medium group-hover:text-accent transition-colors text-foreground/90">
-                    {tech.name}
-                  </p>
+                  <span className="font-bold uppercase tracking-widest text-[10px] text-muted-foreground">{tech.name}</span>
                 </CardContent>
               </Card>
-            </motion.div>
+            </ScaleIn>
           ))}
         </StaggerContainer>
-
-        <FadeIn delay={0.8}>
-          <div className="text-center">
-            <p className="text-muted-foreground">
-              Dan masih banyak tech keren lainnya yang kita kuasai buat kasih{" "}
-              <span className="text-accent font-medium">solusi terbaik</span> buat kamu! 🚀
-            </p>
-          </div>
-        </FadeIn>
       </div>
     </section>
   )
 }
+

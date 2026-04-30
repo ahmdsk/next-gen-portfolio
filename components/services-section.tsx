@@ -2,146 +2,106 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { FadeIn } from "@/components/react-bits/fade-in";
-import { StaggerContainer } from "@/components/react-bits/stagger-container";
-import { ScaleIn } from "@/components/react-bits/scale-in";
-import { Monitor, Smartphone, Palette, Zap } from "lucide-react";
+import { Monitor, Smartphone, Palette, Zap, ArrowUpRight } from "lucide-react";
+import { animate, stagger } from "animejs";
+import { useEffect, useRef } from "react";
 
 const services = [
   {
     icon: Monitor,
-    title: "Bikin Website Kece",
-    description:
-      "Website yang responsive dan kekinian pake teknologi terbaru kayak React, Next.js. Dijamin fast loading dan bikin pengunjung betah!",
-    features: [
-      "Design Responsive",
-      "SEO Friendly",
-      "Loading Cepet",
-      "UI/UX Modern",
-    ],
-    gradient:
-      "from-blue-500/5 to-cyan-500/5 dark:from-blue-500/10 dark:to-cyan-500/10",
+    title: "Enterprise Web Systems",
+    description: "Architecting scalable, resilient web infrastructures that drive business agility and operational efficiency.",
+    className: "md:col-span-2 md:row-span-2",
+    color: "bg-blue-500/10",
+    iconColor: "text-blue-500",
   },
   {
     icon: Smartphone,
-    title: "App Mobile Mantap",
-    description:
-      "Bikin app mobile yang smooth banget buat iOS dan Android. User-friendly dan performanya juara, dijamin nagih dipake terus!",
-    features: [
-      "Cross Platform",
-      "Performa Native",
-      "Push Notif",
-      "Bisa Offline",
-    ],
-    gradient:
-      "from-green-500/5 to-emerald-500/5 dark:from-green-500/10 dark:to-emerald-500/10",
+    title: "Native Mobility",
+    description: "High-performance mobile ecosystems tailored for seamless enterprise integration.",
+    className: "md:col-span-1 md:row-span-1",
+    color: "bg-emerald-500/10",
+    iconColor: "text-emerald-500",
   },
   {
     icon: Palette,
-    title: "Design UI/UX Aesthetic",
-    description:
-      "Design yang eye-catching dan user experience yang intuitif. Bikin user jatuh cinta sama produk kamu!",
-    features: ["User Research", "Wireframing", "Prototyping", "Design System"],
-    gradient:
-      "from-purple-500/5 to-pink-500/5 dark:from-purple-500/10 dark:to-pink-500/10",
+    title: "Experience Design",
+    description: "Human-centric UX strategies that redefine digital engagement and brand loyalty.",
+    className: "md:col-span-1 md:row-span-2",
+    color: "bg-purple-500/10",
+    iconColor: "text-purple-500",
   },
   {
     icon: Zap,
-    title: "Optimasi Super Cepat",
-    description:
-      "Bikin app kamu jadi lightning fast! Optimasi performa yang bikin user experience makin smooth dan enjoyable.",
-    features: [
-      "Speed Boost",
-      "Database Tuning",
-      "Caching Strategy",
-      "Real-time Monitor",
-    ],
-    gradient:
-      "from-orange-500/5 to-red-500/5 dark:from-orange-500/10 dark:to-red-500/10",
+    title: "System Optimization",
+    description: "Performance engineering to maximize throughput and minimize latency across your stack.",
+    className: "md:col-span-1 md:row-span-1",
+    color: "bg-orange-500/10",
+    iconColor: "text-orange-500",
   },
 ];
 
+import { StaggerContainer } from "@/components/react-bits/stagger-container";
+import { SlideIn } from "@/components/react-bits/slide-in";
+
 export function ServicesSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section
-      id="services"
-      className="py-20 bg-gradient-to-b from-background via-card/20 to-background"
-    >
-      <div className="container mx-auto px-4">
-        <FadeIn delay={0.2}>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance text-foreground">
-              Service Kita Yang{" "}
-              <span className="text-accent">Paling Hits!</span> 🔥
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Semua yang kamu butuhin buat bikin digital presence yang kece,
-              dari website sampai app mobile. Tim kita siap bantuin! ✨
-            </p>
-          </div>
-        </FadeIn>
+    <section id="services" className="py-32 pb-48 relative overflow-hidden bg-secondary/50 dark:bg-slate-900/20 transition-colors duration-500">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-black mb-6 tracking-tighter font-heading reveal-text"
+          >
+            <motion.span
+              initial={{ y: "100%" }}
+              whileInView={{ y: 0 }}
+              transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1] }}
+            >
+              Core <span className="text-accent">Solutions</span>
+            </motion.span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-body"
+          >
+            We deliver end-to-end digital excellence through strategic engineering and visionary design.
+          </motion.p>
+        </div>
 
         <StaggerContainer
-          staggerDelay={0.15}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {services.map((service, index) => (
-            <motion.div
+            <SlideIn
               key={service.title}
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              whileHover={{ y: -5 }}
-              transition={{ duration: 0.3 }}
+              direction={index % 2 === 0 ? "left" : "right"}
+              delay={index * 0.1}
+              className={service.className}
             >
-              <Card
-                className={`h-full hover:shadow-xl transition-all duration-300 group hover:border-accent/50 bg-gradient-to-br ${service.gradient} backdrop-blur-sm border-border/50 hover:bg-gradient-to-br hover:from-accent/3 hover:to-accent/5 dark:hover:from-accent/10 dark:hover:to-accent/15`}
-              >
-                <CardContent className="p-6">
-                  <div className="mb-4">
-                    <ScaleIn delay={index * 0.1 + 0.3}>
-                      <div className="w-12 h-12 bg-gradient-to-br from-accent/10 to-accent/5 dark:from-accent/20 dark:to-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:from-accent/20 group-hover:to-accent/10 dark:group-hover:from-accent/30 dark:group-hover:to-accent/20 transition-all duration-300 shadow-sm">
-                        <service.icon className="h-6 w-6 text-accent" />
-                      </div>
-                    </ScaleIn>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors text-foreground">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              <Card className="h-full border-border bg-card/80 dark:bg-card/40 backdrop-blur-2xl overflow-hidden group relative min-h-[350px] shadow-sm hover:shadow-xl transition-all duration-500">
+                <div className={`absolute inset-0 ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <CardContent className="p-10 h-full flex flex-col justify-between relative z-10">
+                  <div>
+                    <div className={`w-14 h-14 rounded-2xl ${service.color} flex items-center justify-center mb-8 border border-border/50`}>
+                      <service.icon className={`w-7 h-7 ${service.iconColor}`} />
+                    </div>
+                    <h3 className="text-3xl font-black mb-4 tracking-tighter text-foreground">{service.title}</h3>
+                    <p className="text-lg text-muted-foreground leading-relaxed font-body">
                       {service.description}
                     </p>
                   </div>
-
-                  <div className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <motion.div
-                        key={feature}
-                        className="flex items-center text-sm"
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{
-                          delay: index * 0.1 + featureIndex * 0.05 + 0.5,
-                        }}
-                        viewport={{ once: true }}
-                      >
-                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-accent to-primary rounded-full mr-2" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </motion.div>
-                    ))}
+                  <div className="flex items-center justify-end mt-10">
+                    <ArrowUpRight className="w-6 h-6 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
                   </div>
-
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full group-hover:border-accent group-hover:text-accent bg-transparent hover:bg-accent/5 dark:hover:bg-accent/10 transition-all duration-300 border-border/50 hover:text-accent dark:hover:text-accent-foreground"
-                  >
-                    Pesen Sekarang!
-                  </Button>
                 </CardContent>
               </Card>
-            </motion.div>
+            </SlideIn>
           ))}
         </StaggerContainer>
       </div>

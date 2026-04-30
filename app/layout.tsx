@@ -1,28 +1,27 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins, Plus_Jakarta_Sans } from "next/font/google"
+import { Urbanist, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Suspense } from "react"
 import "./globals.css"
 
-const poppins = Poppins({
+const urbanist = Urbanist({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-urbanist",
   display: "swap",
 })
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-plus-jakarta",
+  variable: "--font-inter",
   display: "swap",
 })
 
 export const metadata: Metadata = {
-  title: "NextGenInfinity - Wujudkan Aplikasi Impian Anda",
-  description: "Solusi pengembangan aplikasi web dan mobile yang inovatif dengan teknologi terdepan",
+  title: "NextGenInfinity | Enterprise Digital Solutions",
+  description: "Accelerating digital transformation through elite engineering and strategic design.",
   generator: "v0.app",
 }
 
@@ -33,9 +32,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans ${poppins.variable} ${plusJakartaSans.variable} antialiased`}>
+      <body className={`${urbanist.variable} ${inter.variable} font-sans antialiased bg-background text-foreground transition-colors duration-500`}>
         <Suspense fallback={null}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
             {children}
           </ThemeProvider>
         </Suspense>

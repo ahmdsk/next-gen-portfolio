@@ -6,39 +6,32 @@ import { Code, Smartphone, Globe } from "lucide-react"
 const stats = [
   {
     icon: Code,
-    number: "50+",
-    label: "Project Kece",
-    delay: 0.8,
+    number: "120+",
+    label: "Successful Projects",
   },
   {
     icon: Smartphone,
-    number: "98%",
-    label: "Client Happy",
-    delay: 1.0,
+    number: "99%",
+    label: "Customer Satisfaction",
   },
   {
     icon: Globe,
-    number: "24/7",
-    label: "Siap Bantuin",
-    delay: 1.2,
+    number: "15+",
+    label: "Global Partnerships",
   },
 ]
 
 export function HeroStats() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <div className="grid grid-cols-3 gap-12 text-center mt-20">
       {stats.map((stat, index) => (
-        <motion.div
+        <div
           key={index}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: stat.delay, duration: 0.5 }}
-          className="space-y-2 p-6 rounded-lg bg-gradient-to-br from-card/80 to-accent/3 dark:from-background/50 dark:to-accent/5 backdrop-blur-sm border border-accent/10 hover:border-accent/20 transition-all duration-300 hover:shadow-lg light-card-shadow"
+          className="space-y-4"
         >
-          <stat.icon className="h-8 w-8 text-accent mx-auto mb-2" />
-          <div className="text-3xl font-bold text-accent font-heading">{stat.number}</div>
-          <div className="text-sm text-muted-foreground font-body">{stat.label}</div>
-        </motion.div>
+          <div className="text-5xl font-extrabold text-black dark:text-white font-heading tracking-tighter">{stat.number}</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-accent font-bold font-accent">{stat.label}</div>
+        </div>
       ))}
     </div>
   )

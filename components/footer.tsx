@@ -1,194 +1,104 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { FadeIn } from "@/components/react-bits/fade-in"
-import { StaggerContainer } from "@/components/react-bits/stagger-container"
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Github, Twitter, Instagram, Linkedin } from "lucide-react"
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Github, href: "#", label: "Github" },
   { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
 ]
 
-const quickLinks = [
-  { name: "About Kita", href: "#" },
-  { name: "Service", href: "#services" },
-  { name: "Portfolio", href: "#" },
-  { name: "Blog", href: "#" },
-  { name: "Join Tim", href: "#" },
-  { name: "Contact", href: "#contact" },
-]
-
-const services = [
-  { name: "Bikin Website", href: "#" },
-  { name: "App Mobile", href: "#" },
-  { name: "UI/UX Design", href: "#" },
-  { name: "Konsultasi IT", href: "#" },
-  { name: "Maintenance", href: "#" },
-  { name: "SEO Boost", href: "#" },
+const footerLinks = [
+  {
+    title: "Company",
+    links: [
+      { name: "About Us", href: "#" },
+      { name: "Our Process", href: "#" },
+      { name: "Portfolio", href: "#" },
+      { name: "Contact", href: "#contact" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { name: "Web Development", href: "#services" },
+      { name: "Mobile Solutions", href: "#services" },
+      { name: "UI/UX Design", href: "#services" },
+      { name: "Cloud Services", href: "#services" },
+    ],
+  },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-accent/5 via-background to-primary/5 dark:from-accent/10 dark:via-background dark:to-primary/10 text-foreground relative overflow-hidden transition-colors duration-300">
-      <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-primary/10 dark:from-accent/20 dark:via-transparent dark:to-primary/20" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent/20 via-transparent to-transparent dark:from-accent/30 dark:via-transparent dark:to-transparent" />
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent via-primary to-accent" />
-
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        <StaggerContainer staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            className="space-y-4"
-          >
-            <h3 className="text-2xl font-bold text-accent">NextGenInfinity</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Partner terpercaya buat bikin digital presence kamu makin kece! Kita pake teknologi terbaru dan tim yang
-              passionate banget 🚀
+    <footer className="bg-background pt-32 pb-16 text-foreground border-t border-border/50 transition-colors duration-500">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-20">
+          <div className="lg:col-span-1 space-y-8">
+            <h3 className="text-3xl font-black tracking-tighter">
+              NextGen<span className="text-accent">Infinity</span>
+            </h3>
+            <p className="text-muted-foreground leading-relaxed font-body text-lg">
+              Empowering global enterprises through state-of-the-art digital engineering. We architect
+              the foundations of the digital economy.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
+            <div className="flex space-x-6">
+              {socialLinks.map((social) => (
+                <a
                   key={social.label}
                   href={social.href}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ delay: index * 0.1 + 0.5 }}
-                  viewport={{ once: true }}
-                  className="w-10 h-10 bg-accent/10 dark:bg-accent/20 rounded-lg flex items-center justify-center hover:bg-gradient-to-r hover:from-accent hover:to-primary transition-all duration-300 backdrop-blur-sm border border-accent/20 text-muted-foreground hover:text-accent-foreground hover:border-transparent"
+                  className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center hover:bg-accent hover:text-white transition-all duration-300 shadow-sm"
                 >
-                  <social.icon size={18} />
-                </motion.a>
+                  <social.icon size={20} />
+                </a>
               ))}
             </div>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            <h4 className="text-lg font-semibold mb-4 text-accent">Quick Links</h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 + 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-accent transition-colors text-sm hover:translate-x-1 inline-block duration-300"
-                  >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Services */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            <h4 className="text-lg font-semibold mb-4 text-primary">Services</h4>
-            <ul className="space-y-2">
-              {services.map((service, index) => (
-                <motion.li
-                  key={service.name}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 + 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <a
-                    href={service.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm hover:translate-x-1 inline-block duration-300"
-                  >
-                    {service.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact & Newsletter */}
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            className="space-y-4"
-          >
-            <h4 className="text-lg font-semibold text-secondary">Hit Us Up! 📱</h4>
-            <div className="space-y-3">
-              {[
-                { icon: Mail, text: "hello@nextgeninfinity.com" },
-                { icon: Phone, text: "+62 838-9221-2992" },
-                { icon: MapPin, text: "Bandar Lampung, Indonesia" },
-              ].map((contact, index) => (
-                <motion.div
-                  key={contact.text}
-                  className="flex items-center gap-3 group"
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 + 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <contact.icon size={16} className="text-secondary group-hover:scale-110 transition-transform" />
-                  <span className="text-muted-foreground text-sm group-hover:text-foreground transition-colors">
-                    {contact.text}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
-            <FadeIn delay={0.8}>
-              <div className="pt-4">
-                <h5 className="font-medium mb-2 text-secondary">Newsletter 📧</h5>
-                <p className="text-muted-foreground text-sm mb-3">
-                  Dapetin update terbaru tentang tech dan tips coding yang kece!
-                </p>
-                <div className="flex gap-2">
-                  <Input
-                    placeholder="Email kamu"
-                    className="bg-background/50 border-accent/30 focus:border-accent backdrop-blur-sm"
-                  />
-                  <Button className="bg-gradient-to-r from-accent to-primary hover:from-accent/90 hover:to-primary/90 text-accent-foreground shadow-lg border-0">
-                    Subscribe
-                  </Button>
-                </div>
-              </div>
-            </FadeIn>
-          </motion.div>
-        </StaggerContainer>
-
-        <FadeIn delay={1.0}>
-          <div className="border-t border-border/50 mt-12 pt-8 text-center">
-            <p className="text-muted-foreground text-sm">
-              © 2024 NextGenInfinity. All rights reserved.<br />Dibuat dengan <span className="text-red-500 animate-pulse">❤️</span>{" "}
-              dan banyak kopi ☕ di Bandar Lampung, Indonesia
-            </p>
           </div>
-        </FadeIn>
+
+          {footerLinks.map((group) => (
+            <div key={group.title}>
+              <h4 className="text-foreground font-bold uppercase tracking-widest text-sm mb-10">{group.title}</h4>
+              <ul className="space-y-6">
+                {group.links.map((link) => (
+                  <li key={link.name}>
+                    <a href={link.href} className="text-muted-foreground hover:text-accent transition-colors font-body">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div>
+            <h4 className="text-foreground font-bold uppercase tracking-widest text-sm mb-10">Insights</h4>
+            <p className="text-muted-foreground mb-8 font-body">Join our exclusive network for strategic technical intelligence.</p>
+            <div className="flex flex-col gap-4">
+              <Input
+                placeholder="Business Email"
+                className="h-14 bg-secondary border-border focus:border-accent rounded-xl px-6"
+              />
+              <Button className="w-full h-14 bg-accent hover:bg-accent/90 text-white font-bold rounded-xl shadow-lg shadow-accent/20 transition-transform active:scale-95">
+                Subscribe
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-border/50 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-muted-foreground text-sm font-body">
+            © {new Date().getFullYear()} PT NextGen Infinity Solutions. All rights reserved.
+          </p>
+          <div className="flex gap-10 text-sm text-muted-foreground font-body">
+            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+          </div>
+        </div>
       </div>
     </footer>
   )
 }
+

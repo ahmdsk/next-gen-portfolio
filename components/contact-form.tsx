@@ -47,16 +47,16 @@ export function ContactForm() {
       })
 
       if (response.ok) {
-        toast.success("Pesan berhasil dikirim! 🚀", {
-          description: "Kami akan segera menghubungi kamu balik, bestie!",
+        toast.success("Transmission Received", {
+          description: "Our technical team will review your inquiry shortly.",
         })
         setFormData({ name: "", email: "", subject: "", message: "" })
       } else {
         throw new Error("Failed to send email")
       }
     } catch (error) {
-      toast.error("Oops! Ada yang error nih 😅", {
-        description: "Coba lagi nanti ya, atau DM aja langsung!",
+      toast.error("Transmission Error", {
+        description: "Please attempt to reconnect later or contact us directly.",
       })
     } finally {
       setIsSubmitting(false)
@@ -64,153 +64,126 @@ export function ContactForm() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-accent/5 to-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent" />
+    <section id="contact" className="py-32 bg-transparent relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Yuk Chat Sama Kita! 💬</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ada ide gila buat app atau website? Spill aja semua! Kita siap bantu wujudin impian digital kamu jadi
-                kenyataan ✨
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid md:grid-cols-2 gap-8 items-start">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <SlideIn direction="left">
-              <Card className="bg-card/50 backdrop-blur-sm border-accent/20">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Drop Your Message! 📝</CardTitle>
-                  <CardDescription>
-                    Ceritain aja semua yang ada di pikiran kamu. No worries, kita friendly kok! 😊
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <Input
-                          name="name"
-                          placeholder="Nama kamu siapa nih?"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="bg-background/50 border-accent/30 focus:border-accent"
-                        />
-                      </div>
-                      <div>
-                        <Input
-                          name="email"
-                          type="email"
-                          placeholder="Email buat bales chat"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          className="bg-background/50 border-accent/30 focus:border-accent"
-                        />
-                      </div>
+              <div className="space-y-12">
+                <div>
+                  <h2 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter font-heading text-foreground">
+                    Let&apos;s Build <br />
+                    <span className="text-accent">Greatness</span>
+                  </h2>
+                  <p className="text-xl text-muted-foreground max-w-lg font-body leading-relaxed">
+                    Ready to scale your digital presence? Send us a brief and our principal engineers will provide 
+                    a comprehensive technical audit within 24 hours.
+                  </p>
+                </div>
+
+                <div className="space-y-8 pt-12 border-t border-border">
+                  <div className="flex items-center gap-6 group">
+                    <div className="w-14 h-14 bg-secondary dark:bg-white/5 rounded-2xl flex items-center justify-center border border-border group-hover:border-accent/50 transition-colors shadow-sm">
+                      <Send className="h-6 w-6 text-accent" />
                     </div>
                     <div>
-                      <Input
-                        name="subject"
-                        placeholder="Mau bikin apa nih? (Web, App, atau yang lain?)"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-background/50 border-accent/30 focus:border-accent"
-                      />
+                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Direct Email</p>
+                      <p className="text-xl font-bold text-foreground">hello@nextgeninfinity.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-6 group">
+                    <div className="w-14 h-14 bg-secondary dark:bg-white/5 rounded-2xl flex items-center justify-center border border-border group-hover:border-accent/50 transition-colors shadow-sm">
+                      <Loader2 className="h-6 w-6 text-accent" />
                     </div>
                     <div>
-                      <Textarea
-                        name="message"
-                        placeholder="Spill semua detail projectnya! Makin detail makin bagus 🔥"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        rows={5}
-                        className="bg-background/50 border-accent/30 focus:border-accent resize-none"
-                      />
+                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">Global HQ</p>
+                      <p className="text-xl font-bold text-foreground">Bandar Lampung, Indonesia</p>
                     </div>
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-accent-foreground group shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Lagi kirim nih...
-                        </>
-                      ) : (
-                        <>
-                          Kirim Sekarang!
-                          <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </>
-                      )}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+                  </div>
+                </div>
+              </div>
             </SlideIn>
 
-            <SlideIn direction="right" delay={0.2}>
-              <div className="space-y-6">
-                <Card className="bg-gradient-to-br from-accent/10 to-primary/10 border-accent/20">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold mb-3 text-accent">Kenapa Harus Pilih Kita? 🤔</h3>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle size={16} className="text-green-500" />
-                        Fast response - gak bakal nunggu lama!
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle size={16} className="text-green-500" />
-                        Tim yang asik dan gak kaku
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle size={16} className="text-green-500" />
-                        Hasil yang bikin kamu proud
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle size={16} className="text-green-500" />
-                        Support 24/7 sampai project selesai
-                      </li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/20">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold mb-3 text-primary">Quick Contact 📱</h3>
-                    <div className="space-y-3 text-sm">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center">📧</div>
-                        <div>
-                          <p className="font-medium">Email</p>
-                          <p className="text-muted-foreground">hello@nextgeninfinity.com</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center">📞</div>
-                        <div>
-                          <p className="font-medium">WhatsApp</p>
-                          <p className="text-muted-foreground">+62 838-9221-2992</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 bg-accent/20 rounded-lg flex items-center justify-center">📍</div>
-                        <div>
-                          <p className="font-medium">Location</p>
-                          <p className="text-muted-foreground">Bandar Lampung, Indonesia</p>
-                        </div>
-                      </div>
+            <SlideIn direction="right">
+              <Card className="border-border bg-card/80 dark:bg-white/5 backdrop-blur-3xl p-10 rounded-[2.5rem] premium-shadow relative overflow-hidden transition-all duration-500">
+                <div className="absolute top-0 right-0 p-8 opacity-5 dark:opacity-10">
+                  <Send size={150} />
+                </div>
+                
+                <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-3">
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Full Name</label>
+                      <Input
+                        name="name"
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="h-16 bg-secondary/50 dark:bg-white/5 border-border focus:border-accent rounded-2xl text-foreground px-8 transition-all duration-300"
+                      />
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
+                    <div className="space-y-3">
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Email Address</label>
+                      <Input
+                        name="email"
+                        type="email"
+                        placeholder="john@enterprise.com"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="h-16 bg-secondary/50 dark:bg-white/5 border-border focus:border-accent rounded-2xl text-foreground px-8 transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Project Scope</label>
+                    <Input
+                      name="subject"
+                      placeholder="Enterprise Web Application"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
+                      className="h-16 bg-secondary/50 dark:bg-white/5 border-border focus:border-accent rounded-2xl text-foreground px-8 transition-all duration-300"
+                    />
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground ml-1">Message</label>
+                    <Textarea
+                      name="message"
+                      placeholder="Describe your technical requirements and business objectives..."
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={4}
+                      className="bg-secondary/50 dark:bg-white/5 border-border focus:border-accent rounded-2xl text-foreground p-8 resize-none transition-all duration-300"
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-20 bg-accent hover:bg-accent/90 text-white font-bold rounded-2xl shadow-xl shadow-accent/20 transition-all duration-300 font-accent text-lg active:scale-95"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-3 h-6 w-6 animate-spin" />
+                        Transmitting...
+                      </>
+                    ) : (
+                      <>
+                        Send Inquiry
+                        <Send className="ml-3 h-5 w-5" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </Card>
             </SlideIn>
           </div>
         </div>
@@ -218,3 +191,4 @@ export function ContactForm() {
     </section>
   )
 }
+

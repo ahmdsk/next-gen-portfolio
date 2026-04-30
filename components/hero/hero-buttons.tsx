@@ -1,31 +1,34 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
+import { MagneticButton } from "@/components/react-bits/magnetic-button"
+
 export function HeroButtons() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.8 }}
-      className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+    <div
+      className="flex gap-3 md:gap-8 justify-center items-center mb-20"
     >
-      <Button
-        size="lg"
-        className="bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-accent-foreground group shadow-lg hover:shadow-xl transition-all duration-300 font-body"
-      >
-        Yuk Chat Dulu!
-        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-      </Button>
-      <Button
-        size="lg"
-        variant="outline"
-        className="border-accent/50 text-accent hover:bg-accent/10 bg-transparent backdrop-blur-sm font-body"
-      >
-        Liat Karya Kita
-      </Button>
-    </motion.div>
+      <MagneticButton strength={0.4}>
+        <Button
+          size="lg"
+          className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-bold h-16 px-12 rounded-full group transition-all duration-300 font-accent shadow-xl shadow-blue-500/20"
+        >
+          Start Your Project
+          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform" />
+        </Button>
+      </MagneticButton>
+
+      <MagneticButton strength={0.2}>
+        <Button
+          size="lg"
+          variant="outline"
+          className="h-16 px-12 rounded-full border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-white transition-all duration-500 backdrop-blur-xl font-accent"
+        >
+          View Case Studies
+        </Button>
+      </MagneticButton>
+    </div>
   )
 }

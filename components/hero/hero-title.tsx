@@ -1,17 +1,14 @@
-"use client"
-
-import { motion } from "framer-motion"
+import { TextReveal } from "@/components/react-bits/text-reveal"
 
 export function HeroTitle() {
   return (
-    <motion.h1
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.4, duration: 0.8 }}
-      className="text-4xl md:text-6xl lg:text-7xl font-bold text-balance mb-6 text-foreground font-heading"
+    <h1
+      className="text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-balance mb-10 text-slate-900 dark:text-white font-heading"
     >
-      Bikin App & Website{" "}
-      <span className="text-accent bg-gradient-to-r from-accent to-accent/80 bg-clip-text">Kece Badai!</span> 🚀
-    </motion.h1>
+      <TextReveal>Architecting</TextReveal>
+      <TextReveal delay={0.2}>
+        <span className="text-blue-600 dark:text-blue-400">Elite</span> Solutions
+      </TextReveal>
+    </h1>
   )
 }

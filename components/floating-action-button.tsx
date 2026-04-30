@@ -11,21 +11,21 @@ export function FloatingActionButton() {
   const actions = [
     {
       icon: Phone,
-      label: "Telepon",
+      label: "Direct Line",
       href: "tel:+6281234567890",
-      color: "from-green-500 to-green-600",
+      color: "bg-emerald-500",
     },
     {
       icon: Mail,
-      label: "Email",
+      label: "Inquiry",
       href: "mailto:hello@nextgeninfinity.com",
-      color: "from-blue-500 to-blue-600",
+      color: "bg-blue-500",
     },
     {
       icon: Calendar,
-      label: "Jadwal",
+      label: "Schedule",
       href: "#consultation",
-      color: "from-purple-500 to-purple-600",
+      color: "bg-purple-500",
     },
   ]
 
@@ -48,16 +48,16 @@ export function FloatingActionButton() {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-center gap-3"
               >
-                <span className="text-sm font-medium bg-background/90 backdrop-blur-sm px-3 py-1 rounded-lg shadow-lg border border-border">
+                <span className="text-xs font-bold uppercase tracking-widest bg-background/80 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-border text-foreground">
                   {action.label}
                 </span>
                 <Button
                   size="sm"
-                  className={`w-12 h-12 rounded-full bg-gradient-to-r ${action.color} hover:scale-110 transition-all duration-300 shadow-lg`}
+                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${action.color} hover:scale-110 active:scale-95 transition-all duration-300 shadow-xl border border-white/10`}
                   asChild
                 >
                   <a href={action.href}>
-                    <action.icon size={20} />
+                    <action.icon size={22} className="text-white" />
                   </a>
                 </Button>
               </motion.div>
@@ -66,32 +66,32 @@ export function FloatingActionButton() {
         )}
       </AnimatePresence>
 
-      <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
         <Button
           size="lg"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+          className="w-16 h-16 rounded-2xl bg-accent hover:bg-accent/90 text-white shadow-2xl shadow-accent/40 transition-all duration-300 relative overflow-hidden border border-white/20"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (
               <motion.div
                 key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.3, type: "spring" }}
               >
-                <X size={24} />
+                <X size={28} />
               </motion.div>
             ) : (
               <motion.div
                 key="open"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                initial={{ rotate: 90, opacity: 0, scale: 0.5 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                exit={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.3, type: "spring" }}
               >
-                <MessageCircle size={24} />
+                <MessageCircle size={28} />
               </motion.div>
             )}
           </AnimatePresence>

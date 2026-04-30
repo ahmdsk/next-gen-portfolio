@@ -46,14 +46,14 @@ export function FloatingActionButton() {
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: 20, y: 10 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-3"
+                className="flex items-center gap-3 mb-4"
               >
-                <span className="text-xs font-bold uppercase tracking-widest bg-background/80 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-border text-foreground">
+                <span className="text-sm font-semibold tracking-tight bg-white dark:bg-slate-900 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white">
                   {action.label}
                 </span>
                 <Button
                   size="sm"
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${action.color} hover:scale-110 active:scale-95 transition-all duration-300 shadow-xl border border-white/10`}
+                  className={`w-14 h-14 rounded-full bg-gradient-to-br ${action.color} hover:scale-110 active:scale-95 transition-all duration-300 shadow-xl border border-white/10`}
                   asChild
                 >
                   <a href={action.href}>
@@ -70,7 +70,7 @@ export function FloatingActionButton() {
         <Button
           size="lg"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-2xl bg-accent hover:bg-accent/90 text-white shadow-2xl shadow-accent/40 transition-all duration-300 relative overflow-hidden border border-white/20"
+          className="w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white shadow-2xl shadow-blue-500/20 dark:shadow-none transition-all duration-300 relative overflow-hidden border border-white/20"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (

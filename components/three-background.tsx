@@ -10,8 +10,8 @@ import { useEffect, useState } from "react"
 
 function AnimatedSphere() {
   const meshRef = useRef<THREE.Mesh>(null!)
-  const { theme } = useTheme()
-  const isDark = theme === "dark"
+  const { resolvedTheme } = useTheme()
+  const isDark = resolvedTheme === "dark"
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
@@ -25,16 +25,17 @@ function AnimatedSphere() {
     <Float speed={2} rotationIntensity={1} floatIntensity={1}>
       <Sphere ref={meshRef as any} args={[1, 64, 64]} scale={2}>
         <MeshDistortMaterial
-          color={isDark ? "#818cf8" : "#2563eb"}
+          color={isDark ? "#818cf8" : "#bfdbfe"}
           attach="material"
           distort={0.4}
           speed={1.5}
-          roughness={isDark ? 0.2 : 0.1}
-          metalness={isDark ? 0.8 : 0.3}
-          emissive={isDark ? "#312e81" : "#1d4ed8"}
-          emissiveIntensity={isDark ? 0.2 : 0.3}
+          roughness={isDark ? 0.2 : 0.05}
+          metalness={isDark ? 0.8 : 0.4}
+          emissive={isDark ? "#312e81" : "#eff6ff"}
+          emissiveIntensity={isDark ? 0.2 : 0.8}
           clearcoat={isDark ? 0 : 1}
           clearcoatRoughness={0.1}
+          transmission={isDark ? 0 : 0.2}
         />
       </Sphere>
     </Float>
@@ -42,8 +43,8 @@ function AnimatedSphere() {
 }
 
 function Particles() {
-  const { theme } = useTheme()
-  const isDark = theme === "dark"
+  const { resolvedTheme } = useTheme()
+  const isDark = resolvedTheme === "dark"
   const count = 1000
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3)
@@ -59,7 +60,9 @@ function Particles() {
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
-    pointsRef.current.rotation.y = time * 0.05
+    if (pointsRef.current) {
+      pointsRef.current.rotation.y = time * 0.05
+    }
   })
 
   return (
@@ -86,7 +89,7 @@ function Particles() {
 
 export function ThreeBackground() {
   const [mounted, setMounted] = useState(false)
-  const { theme } = useTheme()
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -97,7 +100,7 @@ export function ThreeBackground() {
   return (
     <div className="absolute inset-0 -z-10 bg-background transition-colors duration-500">
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <ambientLight intensity={theme === "dark" ? 0.5 : 1} />
+        <ambientLight intensity={resolvedTheme === "dark" ? 0.5 : 0.8} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
         <AnimatedSphere />

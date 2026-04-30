@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 import { MagneticButton } from "@/components/react-bits/magnetic-button"
 
@@ -25,8 +26,11 @@ export function HeroButtons() {
           size="lg"
           variant="outline"
           className="h-16 px-12 rounded-full border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/50 text-slate-900 dark:text-white hover:bg-blue-50 hover:text-blue-700 dark:hover:bg-slate-800 dark:hover:text-white transition-all duration-500 backdrop-blur-xl font-accent"
+          asChild
         >
-          View Case Studies
+          <Link href="/case-studies/global-fintech-transformation">
+            View Case Studies
+          </Link>
         </Button>
       </MagneticButton>
     </div>

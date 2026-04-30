@@ -1,0 +1,108 @@
+{
+    "Header": {
+        "navServices": "服务",
+        "navTech": "技术",
+        "navProcess": "流程",
+        "navContact": "联系",
+        "contactUs": "联系我们"
+    },
+    "Hero": {
+        "title1": "打造",
+        "title2": "精英级",
+        "title3": "解决方案",
+        "description": "我们构建可扩展的企业级数字系统，重新定义现代企业的运营方式。",
+        "startProject": "开始项目",
+        "viewCaseStudies": "案例研究",
+        "stat1Number": "120+",
+        "stat1Text": "活跃项目",
+        "stat2Number": "99.9%",
+        "stat2Text": "企业级 SLA",
+        "stat3Number": "24/7",
+        "stat3Text": "全球覆盖"
+    },
+    "Services": {
+        "title": "核心",
+        "titleAccent": "解决方案",
+        "subtitle": "我们通过战略工程与前瞻设计，提供端到端的数字卓越体验。",
+        "service1Title": "企业级 Web 系统",
+        "service1Desc": "构建可扩展且高可靠性的 Web 基础设施，推动业务敏捷发展。",
+        "service2Title": "原生移动",
+        "service2Desc": "高性能移动生态系统，实现无缝企业集成。",
+        "service3Title": "体验设计",
+        "service3Desc": "以人为本的 UX 策略，重塑用户参与与品牌忠诚度。",
+        "service4Title": "系统优化",
+        "service4Desc": "通过性能工程最大化效率并降低系统延迟。"
+    },
+    "Tech": {
+        "title": "我们的",
+        "titleAccent": "技术",
+        "subtitle": "由现代、强大且可扩展的技术驱动。"
+    },
+    "Consultation": {
+        "title": "战略咨询",
+        "subtitle": "我们提供专业技术分析与战略评估，确保您的数字投资实现最大业务价值。",
+        "benefit1": "全面技术可行性审计",
+        "benefit2": "定制数字转型路线图",
+        "benefit3": "可扩展基础设施与预算建模",
+        "benefit4": "直接对接高级技术负责人",
+        "scheduleButton": "预约高管简报",
+        "method1Title": "战略顾问",
+        "method1Desc": "与我们的首席工程师对接，制定高层技术战略与路线规划。",
+        "method2Title": "直接通话",
+        "method2Desc": "深入沟通项目范围与技术需求。",
+        "method3Title": "高管简报",
+        "method3Desc": "虚拟会议，确保数字目标与业务成果一致。"
+    },
+    "Contact": {
+        "title": "准备好",
+        "titleAccent": "创新了吗？",
+        "subtitle": "让我们一起构建下一代数字生态系统。",
+        "name": "姓名",
+        "email": "公司邮箱",
+        "message": "项目详情",
+        "submit": "提交咨询"
+    },
+    "CTA": {
+        "title": "加速",
+        "titleAccent": "你的未来",
+        "subtitle": "与 NextGenInfinity 合作，通过精英级技术工程与前瞻战略实现组织转型。",
+        "btnPrimary": "开始项目",
+        "btnSecondary": "下载能力介绍",
+        "benefit1": "战略咨询",
+        "benefit2": "性能审计",
+        "benefit3": "可扩展工程"
+    },
+    "Footer": {
+        "description": "通过前沿数字工程赋能全球企业，构建数字经济基础。",
+        "privacy": "隐私政策",
+        "terms": "条款与条件",
+        "company": "公司",
+        "aboutUs": "关于我们",
+        "ourProcess": "我们的流程",
+        "portfolio": "案例",
+        "contact": "联系",
+        "services": "服务",
+        "webDev": "Web 开发",
+        "mobileSolutions": "移动解决方案",
+        "uiUxDesign": "UI/UX 设计",
+        "cloudServices": "云服务",
+        "insights": "洞察",
+        "insightsDesc": "加入我们的专属网络，获取技术战略洞察。",
+        "subscribe": "订阅",
+        "businessEmail": "企业邮箱",
+        "rights": "© {year} PT NextGen Infinity Solutions. 版权所有。"
+    },
+    "Floating": {
+        "directLine": "电话",
+        "inquiry": "咨询",
+        "schedule": "预约"
+    },
+    "ContactForm": {
+        "title1": "一起打造",
+        "title2": "卓越",
+        "description": "准备扩展您的数字业务？提交您的需求，我们的工程师将在24小时内提供技术审计。",
+        "directEmail": "直接邮箱",
+        "globalHQ": "全球总部",
+        "projectScope": "项目范围"
+    }
+}

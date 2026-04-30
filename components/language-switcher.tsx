@@ -18,7 +18,9 @@ export function LanguageSwitcher() {
     { code: "en", label: "EN" },
     { code: "id", label: "ID" },
     { code: "de", label: "DE" },
-    { code: "hi", label: "HI" },
+    { code: "hk", label: "HK" },
+    { code: "ru", label: "RU" },
+    { code: "cn", label: "CN" },
   ]
 
   useEffect(() => {
@@ -60,11 +62,10 @@ export function LanguageSwitcher() {
               <button
                 key={locale.code}
                 onClick={() => switchLocale(locale.code)}
-                className={`text-sm font-semibold tracking-wide py-2 px-4 rounded-xl text-left transition-colors font-accent ${
-                  currentLocale === locale.code
-                    ? "bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400"
-                    : "text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
-                }`}
+                className={`text-sm font-semibold tracking-wide py-2 px-4 rounded-xl text-left transition-colors font-accent ${currentLocale === locale.code
+                  ? "bg-blue-50 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400"
+                  : "text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
+                  }`}
               >
                 {locale.label}
               </button>

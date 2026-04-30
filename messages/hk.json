@@ -1,0 +1,108 @@
+{
+    "Header": {
+        "navServices": "服務",
+        "navTech": "技術",
+        "navProcess": "流程",
+        "navContact": "聯絡",
+        "contactUs": "聯絡我們"
+    },
+    "Hero": {
+        "title1": "打造",
+        "title2": "精英級",
+        "title3": "解決方案",
+        "description": "我們構建可擴展的企業級數碼系統，重新定義現代企業的運作方式。",
+        "startProject": "開始項目",
+        "viewCaseStudies": "案例研究",
+        "stat1Number": "120+",
+        "stat1Text": "活躍項目",
+        "stat2Number": "99.9%",
+        "stat2Text": "企業級 SLA",
+        "stat3Number": "24/7",
+        "stat3Text": "全球覆蓋"
+    },
+    "Services": {
+        "title": "核心",
+        "titleAccent": "解決方案",
+        "subtitle": "透過策略工程與前瞻設計，提供端到端的數碼卓越體驗。",
+        "service1Title": "企業級 Web 系統",
+        "service1Desc": "構建可擴展且高可靠性的 Web 基礎設施。",
+        "service2Title": "原生移動",
+        "service2Desc": "高性能移動生態系統，實現無縫整合。",
+        "service3Title": "體驗設計",
+        "service3Desc": "以人為本的 UX 策略，提升品牌忠誠度。",
+        "service4Title": "系統優化",
+        "service4Desc": "透過性能工程降低延遲並提升效率。"
+    },
+    "Tech": {
+        "title": "我們的",
+        "titleAccent": "技術",
+        "subtitle": "由現代、強大且可擴展的技術驅動。"
+    },
+    "Consultation": {
+        "title": "策略諮詢",
+        "subtitle": "提供專業技術分析與策略評估，確保最大商業價值。",
+        "benefit1": "全面技術審計",
+        "benefit2": "客製化轉型路線圖",
+        "benefit3": "基礎設施與預算建模",
+        "benefit4": "直接對接高級工程師",
+        "scheduleButton": "預約會議",
+        "method1Title": "策略顧問",
+        "method1Desc": "與核心工程師制定策略。",
+        "method2Title": "直接通話",
+        "method2Desc": "深入了解項目需求。",
+        "method3Title": "高層簡報",
+        "method3Desc": "確保業務與數碼目標一致。"
+    },
+    "Contact": {
+        "title": "準備好",
+        "titleAccent": "創新了嗎？",
+        "subtitle": "一起打造新一代數碼生態系統。",
+        "name": "姓名",
+        "email": "公司電郵",
+        "message": "項目詳情",
+        "submit": "提交"
+    },
+    "CTA": {
+        "title": "加速",
+        "titleAccent": "未來",
+        "subtitle": "與 NextGenInfinity 合作，推動企業轉型。",
+        "btnPrimary": "開始項目",
+        "btnSecondary": "下載資料",
+        "benefit1": "策略諮詢",
+        "benefit2": "性能審計",
+        "benefit3": "可擴展工程"
+    },
+    "Footer": {
+        "description": "透過前沿數碼工程賦能企業。",
+        "privacy": "私隱政策",
+        "terms": "條款",
+        "company": "公司",
+        "aboutUs": "關於我們",
+        "ourProcess": "流程",
+        "portfolio": "案例",
+        "contact": "聯絡",
+        "services": "服務",
+        "webDev": "Web 開發",
+        "mobileSolutions": "移動方案",
+        "uiUxDesign": "UI/UX 設計",
+        "cloudServices": "雲服務",
+        "insights": "洞察",
+        "insightsDesc": "加入我們的專屬網絡。",
+        "subscribe": "訂閱",
+        "businessEmail": "商業電郵",
+        "rights": "© {year} PT NextGen Infinity Solutions. 版權所有。"
+    },
+    "Floating": {
+        "directLine": "電話",
+        "inquiry": "查詢",
+        "schedule": "預約"
+    },
+    "ContactForm": {
+        "title1": "一起打造",
+        "title2": "卓越",
+        "description": "提交需求，24小時內獲得技術評估。",
+        "directEmail": "直接電郵",
+        "globalHQ": "總部",
+        "projectScope": "項目範圍"
+    }
+}

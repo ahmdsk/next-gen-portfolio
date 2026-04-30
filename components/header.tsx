@@ -33,7 +33,7 @@ export function Header() {
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className={`w-full container rounded-2xl border transition-all duration-500 flex items-center justify-between px-6 py-3 ${isScrolled
+        className={`w-full lg:container rounded-2xl border transition-all duration-500 flex items-center justify-between px-6 py-3 ${isScrolled
           ? "bg-background/20 backdrop-blur-xl border-border/50 shadow-2xl"
           : "bg-transparent border-transparent"
           }`}
@@ -43,7 +43,7 @@ export function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-10">
+        <nav className="hidden lg:flex items-center space-x-10">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -62,7 +62,7 @@ export function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="lg:hidden flex items-center gap-2">
           <LanguageSwitcher />
           <ThemeToggle />
           <button

@@ -83,6 +83,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
     background-image: radial-gradient(var(--border) 1px, transparent 1px);
@@ -107,7 +108,7 @@
   .glass {
     @apply bg-white/70 backdrop-blur-2xl border border-black/5 shadow-sm;
   }
-  
+
   .dark .glass {
     @apply bg-black/20 backdrop-blur-2xl border border-white/5 shadow-none;
   }
@@ -119,4 +120,8 @@
   .dark .premium-shadow {
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
   }
+}
+
+* {
+  scroll-behavior: smooth;
 }

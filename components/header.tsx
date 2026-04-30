@@ -83,7 +83,7 @@ export function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-3xl font-black tracking-tighter text-foreground hover:text-accent transition-colors"
+                  className="text-xl font-semibold tracking-tighter text-foreground hover:text-accent transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
